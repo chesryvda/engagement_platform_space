@@ -3,7 +3,237 @@ guid: 49c05b55d513941a49a3d280f77e1a29
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 19 - Default
+    second: {fileID: 2100000, guid: 2837730c634e64550a9ab3399d3d0513, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default
+    second: {fileID: 2100000, guid: d43abab7080cb498e89c399ef57bee89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material1
+    second: {fileID: 2100000, guid: 39857a84f55d84f29882580004205f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material2
+    second: {fileID: 2100000, guid: bdbd3d42130cf4e51b4e17d53794e936, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material3
+    second: {fileID: 2100000, guid: 3de918b26ac384b8ab52d8eb04be47c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bluebg
+    second: {fileID: 2100000, guid: a2f0bc885df37414e842b08fb4df4a3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: d_ring with Tex_
+    second: {fileID: 2100000, guid: 386c51eed0f1140368ec5c02d39c80ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: graple with Tex_
+    second: {fileID: 2100000, guid: 49d85d3279cf7453f8c17bb9496135a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iss_dc with Tex_
+    second: {fileID: 2100000, guid: 00309f18ed7184a55b3465834ca9bbcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iss_dcs with Tex
+    second: {fileID: 2100000, guid: 6569ee39de4a0431495c99385064ac49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iss_un with Tex_
+    second: {fileID: 2100000, guid: bb022b063ed524e6eafa1807fb902240, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issb with Tex_ I
+    second: {fileID: 2100000, guid: af51da9886f9c470084b703ae80db324, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issb2 with Tex__
+    second: {fileID: 2100000, guid: 8a1596705c4d1431586b3de6c9996699, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issb3 with Tex__
+    second: {fileID: 2100000, guid: 7930b95f7fe4b43d495aff396774b4fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issb4 with Tex__
+    second: {fileID: 2100000, guid: 657ea222320ab44d9b8757783fa02014, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issbs with Tex__
+    second: {fileID: 2100000, guid: dfcc4f82d4918403f88b98437ca23037, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issbso with Tex_
+    second: {fileID: 2100000, guid: 17ea6884ed43845c682fb7adefca3a85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issbso2 with Tex
+    second: {fileID: 2100000, guid: 018dcf3a689bf4862b6a5d0120eee6fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isscov2 with Tex
+    second: {fileID: 2100000, guid: 1ad24c4cc54ec4643939be0e70e7a8e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isscover with Te
+    second: {fileID: 2100000, guid: 58756a41dd80648edbab18e110d40465, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isscup with Tex_
+    second: {fileID: 2100000, guid: 38832ec757d8040ec9a2cfded728e660, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issdish with Tex
+    second: {fileID: 2100000, guid: b8582ced7f98647879a3ea7aa79323a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issdot with Tex_
+    second: {fileID: 2100000, guid: 62d7b7774d1e343e5a16bc9879bd1ed0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issesa with Tex_
+    second: {fileID: 2100000, guid: 8cd1bd37a4c0c4d28965763dd6360268, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isshand with Tex
+    second: {fileID: 2100000, guid: 98ff8f5f6af6b40e0a1ed307b47233de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issins with Tex_
+    second: {fileID: 2100000, guid: 0a7b96fe3608b48069737e7aec301f86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issku with Tex__
+    second: {fileID: 2100000, guid: 9e421c6b61bad4f70b10bd6d3ceb5e4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issku1 with Tex_
+    second: {fileID: 2100000, guid: f8ba0c228739a4ac88c8762762054a3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issku2 with Tex_
+    second: {fileID: 2100000, guid: dbe18ffaaec584f2d919808fab557916, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issleo with Tex_
+    second: {fileID: 2100000, guid: 60f4247deb2dc4ca49c9325b5e72cbbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issmb with Tex__
+    second: {fileID: 2100000, guid: 9661e59e557014fbe886bd4723cd5a68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issmod with Tex_
+    second: {fileID: 2100000, guid: a8bb7d7cf5cbf4b12a76007379cddd16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issp2 with Tex__
+    second: {fileID: 2100000, guid: 3ea479fe4dc754e77bc1f5f093069ecc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isspanel with Te
+    second: {fileID: 2100000, guid: d3a3763d9b71c432f85471cd9c427463, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issrad with Tex_
+    second: {fileID: 2100000, guid: 82a5c8dd2258742dca375d4e9c109495, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issred with Tex_
+    second: {fileID: 2100000, guid: 2f7bfd2d00c754fe5b2f5133cd7c4961, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isssolar with Te
+    second: {fileID: 2100000, guid: 698d1dcc3af6d43e0b07b077d96c1da2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issusa with Tex_
+    second: {fileID: 2100000, guid: f002b9a7c580e47e3a6a886ca8fa4d73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issusaf with 1
+    second: {fileID: 2100000, guid: da2357bbb2c844b948b25a5008c7119b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: issusaf with Tex
+    second: {fileID: 2100000, guid: 93d6fef6dc7564c11bcab1b6247b049d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: isszmod with Tex
+    second: {fileID: 2100000, guid: ed32ae1b8c53c4af9a1719ea2160a5c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material04
+    second: {fileID: 2100000, guid: f2dfdf4d404be437595045d63efaaed7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metalcon with Te
+    second: {fileID: 2100000, guid: 657bcacd876c34c239aa74dd43af6fc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nasda with Tex__
+    second: {fileID: 2100000, guid: b7b8d49b8f07745a3b3a74e771305482, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: questcov with Te
+    second: {fileID: 2100000, guid: 60014b444fdf24544890ead9104f4639, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white
+    second: {fileID: 2100000, guid: 833dba2501e6840c499e13bb54d8efc9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

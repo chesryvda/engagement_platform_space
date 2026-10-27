@@ -3,7 +3,252 @@ guid: 4ccc1d8cf420e4b03a1391a1bc6fd475
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 3rd taillight
+    second: {fileID: 2100000, guid: 512485fdfde5a443cb8fa95a3d868996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Astronaut visor (dark)
+    second: {fileID: 2100000, guid: 8e443cd7c96464273b55092817293c5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brake pads
+    second: {fileID: 2100000, guid: 7ecd000e0745943e081e5e199612ad45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caliper
+    second: {fileID: 2100000, guid: 7d17e4963531b4f2f8b0e4feaffbb519, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carbon fiber
+    second: {fileID: 2100000, guid: 8070a35b109ba4ad7bd18e48e21af7dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cluster gauge
+    second: {fileID: 2100000, guid: be7856926a65347e8830bf590fd3b3a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cluster gauge glass
+    second: {fileID: 2100000, guid: 2181682d23ec94cd6b2872faf33315a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coil
+    second: {fileID: 2100000, guid: 8163ff9b3933e411d8c633e304425259, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Disk
+    second: {fileID: 2100000, guid: f2a43712c895c4fcfa51d239ed5b789e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive lights
+    second: {fileID: 2100000, guid: fccbc5deaa5ef4a0dadff6fa5bf06c42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive lights (orange)
+    second: {fileID: 2100000, guid: 28bca1e3316f946aeafd3b14dc5f76d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fender lights (orange)
+    second: {fileID: 2100000, guid: e4304745f450043eb948cc02a5e39224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fender lights (red)
+    second: {fileID: 2100000, guid: eade9a8e793594d5681b73072b697fff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fender lights LED
+    second: {fileID: 2100000, guid: 98fcd38c734f64a73b2ecac40fd1fcff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 70c8dcd235e354f838100f9ebad51f1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grill
+    second: {fileID: 2100000, guid: 41196009558ba49e89499f6a75aaac59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Headllight case
+    second: {fileID: 2100000, guid: cbd7802deee974a2e90125173baf3423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior
+    second: {fileID: 2100000, guid: 3c4ff0a4cc79a420a985e7f95b5c4c25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Interior trim
+    second: {fileID: 2100000, guid: cd90d0015eb23425b9e97eda1fae37bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather
+    second: {fileID: 2100000, guid: 65e913e3ce63945e9b8ae8b2c978321a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leather pattern
+    second: {fileID: 2100000, guid: 5327f23631ef54b0db3a5b81f20f625f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light cork
+    second: {fileID: 2100000, guid: 7575338d46a4946fcb178cb8c6cf8436, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light glass
+    second: {fileID: 2100000, guid: 0ac0f3dc0cf4144cbaa1b43b0eac27c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light glass (orange)
+    second: {fileID: 2100000, guid: 121bfb439380e4149aea29e9a52d7ad1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light metal
+    second: {fileID: 2100000, guid: 6811236acf824418f86f834dd9e05e81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_2
+    second: {fileID: 2100000, guid: 7fe615c766f3348aca177af43440441f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mirrors
+    second: {fileID: 2100000, guid: 0bcb4c29922024820b48280109dadf8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Needle
+    second: {fileID: 2100000, guid: acf08367688144fbea1d93ce83f3fe22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paint
+    second: {fileID: 2100000, guid: d5b4210e1fc484b558d91b0ac9120292, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Projector lights
+    second: {fileID: 2100000, guid: 60362643703b3448f9c4482ccb23dab6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Radio buttons
+    second: {fileID: 2100000, guid: 749f800875af14b399ced7875031c98b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rear lights
+    second: {fileID: 2100000, guid: 124b0e20357dc4dd58c98e26b1bff19e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reflector
+    second: {fileID: 2100000, guid: 82f69ada2342444319723ba6c2f7d9ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Reverse lights
+    second: {fileID: 2100000, guid: 6e847f3e923d54c8fa4524db1ba0581d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rims
+    second: {fileID: 2100000, guid: d9432763b161e4b4980cc49de23423f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: ee3d9db7f31924413a8d67e86b168d51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Seat
+    second: {fileID: 2100000, guid: 337ac71a5950d419d86a0e9d8afa54c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Signal lights
+    second: {fileID: 2100000, guid: e2a326fe73e9a49a1b1beb0a1e996f77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Symbol
+    second: {fileID: 2100000, guid: 5e46a6bb132cd4f8eb596c12754117d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Taillight glass
+    second: {fileID: 2100000, guid: 14998d2b235364954b4f42be72828ead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tesla logo
+    second: {fileID: 2100000, guid: ea0e71c0855ec4a269301e2ee2f5fe79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tesla logo (rims)
+    second: {fileID: 2100000, guid: 64acb9020661547858eb1c3fdde6cc4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tesla text
+    second: {fileID: 2100000, guid: 10de01789c53a424c80718f801396df9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tire
+    second: {fileID: 2100000, guid: e1bddbe3d46d74443bd08495d460836d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tread
+    second: {fileID: 2100000, guid: 562988ec7368943f3b0e179b4a884c2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trim
+    second: {fileID: 2100000, guid: b8fbebb28b8604051b641fad27573b3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tungsten
+    second: {fileID: 2100000, guid: 709b830bd84774b288c32cd41e1a9ea7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wheel bolts
+    second: {fileID: 2100000, guid: df7873761aad54614b0eafff7e34d488, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light reflector bowl
+    second: {fileID: 2100000, guid: c7c89457d9d1d4b47a43c141920b8b02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
