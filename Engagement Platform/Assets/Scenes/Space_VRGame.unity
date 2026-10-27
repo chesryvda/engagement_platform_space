@@ -6771,6 +6771,7 @@ GameObject:
   - component: {fileID: 1037567013}
   - component: {fileID: 1037567012}
   - component: {fileID: 1037567011}
+  - component: {fileID: 1037567014}
   m_Layer: 0
   m_Name: PedalSystem
   m_TagString: Untagged
@@ -6868,6 +6869,26 @@ MonoBehaviour:
   pedalSpeed: 60
   acceleration: 120
   deceleration: 90
+--- !u!114 &1037567014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037567009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33b39021a4d444f58a2b086e647fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpaceCockpit.CockpitMover
+  vehicle: {fileID: 2145591831}
+  crank: {fileID: 1037567013}
+  forwardSpeed: 100
+  destination: {fileID: 6591377671408484274}
+  stopDistance: 40
+  faceDestination: 1
+  turnSpeed: 5
+  localForward: {x: 0, y: 0, z: -1}
 --- !u!1001 &1037994647
 PrefabInstance:
   m_ObjectHideFlags: 0
