@@ -3,7 +3,27 @@ guid: 9012f832293a44d61b0d0a96082b6239
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Aluminium
+    second: {fileID: 2100000, guid: 98691485a1b134141968736aa0d161b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BusPanel
+    second: {fileID: 2100000, guid: 1d4872216a5824adf9874ee9d861be34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Composite
+    second: {fileID: 2100000, guid: a87a8149199e24acebfcc23865c928d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Honeycomb
+    second: {fileID: 2100000, guid: 9f2c958a28a2645a888a516b54ed8220, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

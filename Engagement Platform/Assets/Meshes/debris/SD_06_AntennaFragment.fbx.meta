@@ -3,7 +3,27 @@ guid: c20675988fa72415dbbd8c75bc7d72e8
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Aluminium
+    second: {fileID: 2100000, guid: 98691485a1b134141968736aa0d161b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Composite
+    second: {fileID: 2100000, guid: a87a8149199e24acebfcc23865c928d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_GoldMLI
+    second: {fileID: 2100000, guid: c40a0e6d9ad5f406486f22f20b0cd423, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_WhitePaint
+    second: {fileID: 2100000, guid: 6587e825610cb4a8d8c84448f3ee9a11, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

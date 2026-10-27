@@ -3,7 +3,22 @@ guid: 9414b65fbd615430ea2d3ecd93589ebf
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Aluminium
+    second: {fileID: 2100000, guid: 98691485a1b134141968736aa0d161b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Composite
+    second: {fileID: 2100000, guid: a87a8149199e24acebfcc23865c928d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SolarCell
+    second: {fileID: 2100000, guid: 0a4b1a3000a8a4b5e8070c614e03f339, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
