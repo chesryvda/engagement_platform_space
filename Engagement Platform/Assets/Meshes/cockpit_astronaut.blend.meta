@@ -3,7 +3,32 @@ guid: 9a41c92c4eda144e0843399e0b452d93
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: 1e5c9bfea93c14af291e6ce692f84f64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass (Clear)
+    second: {fileID: 2100000, guid: fc40a3ce986234902bb6e2514e7fe024, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic (Tan)
+    second: {fileID: 2100000, guid: fc883645686d44bfa825a59f00257bfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic - Glossy (Black)
+    second: {fileID: 2100000, guid: 298b164cb0c8d4bd58d739f2ca0e032f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel - Satin
+    second: {fileID: 2100000, guid: c4a379462622b406bb027430609ff3f2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
