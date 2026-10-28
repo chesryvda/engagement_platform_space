@@ -9606,7 +9606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingStarsRotation
   targetCamera: {fileID: 1970624721}
-  rotationSpeed: 0.5
+  rotationSpeed: 0.1
 --- !u!23 &1462850068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9674,7 +9674,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10000, y: 10000, z: 10000}
+  m_LocalScale: {x: 9500, y: 9500, z: 9500}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -12864,14 +12864,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936733832}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000000037252903}
-  m_LocalPosition: {x: -5.405766, y: 2.1463432, z: -0.13813001}
+  m_LocalRotation: {x: -0.011256918, y: -0.94490707, z: 0.3271452, w: 0.000000013038516}
+  m_LocalPosition: {x: -5.4085746, y: 2.1735382, z: -0.054436862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1832632479}
   m_Father: {fileID: 2145591831}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.188, y: -179.463, z: 1.551}
 --- !u!1001 &1936776588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13048,13 +13048,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970624720}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.078, y: 0.134, z: -0}
+  m_LocalRotation: {x: -0.21154553, y: -0.010966226, z: -0.013104385, w: 0.9772188}
+  m_LocalPosition: {x: 0.11, y: 0.13401523, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1832632479}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -24.44, y: -1, z: -1.32}
 --- !u!114 &1970624722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13209,7 +13209,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 5000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -14486,7 +14486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f91c583cfa7b54e408f13968fcb30cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthCloudRotation
-  degreesPerSecond: 1
+  degreesPerSecond: 0.25
   localPoleAxis: {x: 0, y: 0, z: 1}
 --- !u!4 &2097235595 stripped
 Transform:
