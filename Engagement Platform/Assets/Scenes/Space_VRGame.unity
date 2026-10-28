@@ -10164,6 +10164,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b4d6d6c54d6a04e578cf7fb138e56d8c, type: 3}
   m_PrefabInstance: {fileID: 1508430135}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1512232571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 83.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 662.99164
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.925203
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0276813
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.28436458
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.24973969
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -5.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 32.837
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 28.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76ff2642cded74046a62e79961da2548, type: 3}
+      propertyPath: m_Name
+      value: technopolis_toren
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76ff2642cded74046a62e79961da2548, type: 3}
 --- !u!1001 &1513417275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26737,3 +26794,4 @@ SceneRoots:
   - {fileID: 371570809}
   - {fileID: 950778344}
   - {fileID: 1254539347}
+  - {fileID: 1512232571}
