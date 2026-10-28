@@ -30,6 +30,7 @@ public class BikeInput : MonoBehaviour
 
     // Dit getal leest Cadence.
     public int TotalRevolutions => totalRevolutions;
+    public bool BikeConnected => bikeConnected;
 
     private SerialPort port;
     private Thread readThread;
