@@ -2220,6 +2220,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353126013}
   m_Mesh: {fileID: -1694408487446831706, guid: 49c05b55d513941a49a3d280f77e1a29, type: 3}
+--- !u!1 &371570808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371570809}
+  m_Layer: 0
+  m_Name: Ship
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &371570809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371570808}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0003332437, y: 0.01852934, z: 0.000006175846, w: 0.9998283}
+  m_LocalPosition: {x: 1.5, y: 22.52, z: -831}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2145591831}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &377922778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6192,6 +6224,118 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c20675988fa72415dbbd8c75bc7d72e8, type: 3}
   m_PrefabInstance: {fileID: 947699937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &950778342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950778344}
+  - component: {fileID: 950778343}
+  m_Layer: 0
+  m_Name: Route
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &950778343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950778342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineContainer
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 1.5
+        y: 22.52
+        z: -831
+      TangentIn:
+        x: 0
+        y: 0
+        z: 0
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0
+      Rotation:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+    - Position:
+        x: 106.053345
+        y: 24.401001
+        z: 1988.8383
+      TangentIn:
+        x: 0
+        y: 0
+        z: 0
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0
+      Rotation:
+        value:
+          x: 0
+          y: 0
+          z: 0
+          w: 1
+    m_MetaData:
+    - Mode: 1
+      Tension: 0.5
+    - Mode: 1
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!4 &950778344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950778342}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964192383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,6 +8364,199 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241392084}
   m_Mesh: {fileID: -6527476422933035736, guid: 49c05b55d513941a49a3d280f77e1a29, type: 3}
+--- !u!1 &1254539341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254539347}
+  - component: {fileID: 1254539346}
+  - component: {fileID: 1254539345}
+  - component: {fileID: 1254539344}
+  - component: {fileID: 1254539343}
+  - component: {fileID: 1254539342}
+  m_Layer: 0
+  m_Name: RouteSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1254539342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eceb016539b93841afb53906be7a62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartOnFirstPedal
+  bikeInput: {fileID: 1254539346}
+  routeMover: {fileID: 1254539343}
+--- !u!114 &1254539343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b521440950f381745adca55f921c7252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouteMover
+  route: {fileID: 950778343}
+  ship: {fileID: 371570809}
+  shipSpeed: {fileID: 1254539344}
+  segments:
+  - name: Vertrek
+    startDistance: 0
+    minSpeed: 29.3
+    maxSpeed: 48.8
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Satelliet
+    startDistance: 530
+    minSpeed: 11.7
+    maxSpeed: 19.5
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Tussenstuk
+    startDistance: 770
+    minSpeed: 29.3
+    maxSpeed: 48.8
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Ruimteafval
+    startDistance: 1461
+    minSpeed: 11.7
+    maxSpeed: 19.5
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Tussenstuk
+    startDistance: 1651
+    minSpeed: 29.3
+    maxSpeed: 48.8
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Tesla
+    startDistance: 1765
+    minSpeed: 11.7
+    maxSpeed: 19.5
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Tussenstuk
+    startDistance: 1935
+    minSpeed: 29.3
+    maxSpeed: 48.8
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: "Astero\xEFden"
+    startDistance: 2315
+    minSpeed: 11.7
+    maxSpeed: 19.5
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: Maan
+    startDistance: 2485
+    minSpeed: 11.7
+    maxSpeed: 19.5
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+  blendDistance: 100
+  onRouteFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  distance: 0
+  routeLength: 0
+  currentSegmentName: 
+  elapsedTime: 0
+--- !u!114 &1254539344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a881c9f56896346a5a33d5b327382c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipSpeed
+  cadence: {fileID: 1254539345}
+  rpmForMin: 20
+  rpmForMax: 80
+  acceleration: 12
+  p: 0
+  minSpeed: 5
+  maxSpeed: 10
+  targetSpeed: 0
+  currentSpeed: 0
+--- !u!114 &1254539345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7abf71591e53747bf92b05bb687c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cadence
+  bikeInput: {fileID: 1254539346}
+  windowSeconds: 3
+  smoothing: 4
+  rawRpm: 0
+  rpm: 0
+--- !u!114 &1254539346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099a12388cab9dc4389539e0c8750fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BikeInput
+  useBike: 0
+  portName: COM3
+  baudRate: 9600
+  pulsesPerRevolution: 6
+  totalRevolutions: 0
+  bikeConnected: 0
+--- !u!4 &1254539347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1256541251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15175,35 +15512,35 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 371570809}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 22.52
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -831
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.017197132
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
-      propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0013324209
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000044409717
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9998521
+      value: 0.99999905
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.00033330062
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26396,5 +26733,7 @@ SceneRoots:
   - {fileID: 1897984179492819103}
   - {fileID: 1462850070}
   - {fileID: 4319939411000865129}
-  - {fileID: 2145591830}
   - {fileID: 383385737}
+  - {fileID: 371570809}
+  - {fileID: 950778344}
+  - {fileID: 1254539347}
