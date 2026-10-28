@@ -16,6 +16,8 @@ public class Cadence : MonoBehaviour
     public float windowSeconds = 3f;
     [Tooltip("Hoe snel het RPM-getal meebeweegt. Groter = sneller reageren, kleiner = rustiger.")]
     public float smoothing = 4f;
+    [Tooltip("Zonder fiets (SPATIE): zoveel duwen telt als 1 omwenteling. 3 = 4x per seconde duwen is volle snelheid. De fiets zelf verandert niet.")]
+    [Min(1f)] public float keyboardPressesPerRevolution = 3f;
 
     [Header("Live (alleen kijken)")]
     [SerializeField] private float rawRpm;
@@ -61,6 +63,10 @@ public class Cadence : MonoBehaviour
             float gap = Mathf.Max(averageGap, sinceLast);
 
             rawRpm = gap > 0.01f ? 60f / gap : 0f;
+
+            // Op SPATIE duw je veel sneller dan iemand trapt: omrekenen naar een echt trapritme.
+            if (!bikeInput.BikeConnected)
+                rawRpm /= keyboardPressesPerRevolution;
         }
         else
         {

@@ -8747,6 +8747,7 @@ MonoBehaviour:
   bikeInput: {fileID: 1254539346}
   windowSeconds: 3
   smoothing: 4
+  keyboardPressesPerRevolution: 3
   rawRpm: 0
   rpm: 0
 --- !u!114 &1254539346
