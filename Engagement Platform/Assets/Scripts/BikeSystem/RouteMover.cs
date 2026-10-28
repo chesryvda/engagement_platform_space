@@ -46,6 +46,10 @@ public class RouteMover : MonoBehaviour
     [SerializeField] private string currentSegmentName;
     [SerializeField] private float elapsedTime;
 
+    // Dit leest FocusStops.
+    public float Distance => distance;
+    public float RouteLength => routeLength;
+
     private int currentIndex = -1;
     private bool finished;
 

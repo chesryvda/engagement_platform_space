@@ -28,9 +28,26 @@ public class ShipSpeed : MonoBehaviour
 
     // Dit lezen RouteMover en later het dashboard.
     public float CurrentSpeed => currentSpeed;
+    public float TargetSpeed => targetSpeed;
     public float P => p;
 
     private bool started;
+    private bool held;
+    private float heldSpeed;
+
+    // FocusStops neemt de snelheid tijdelijk over (stop bij een object, einde van de route).
+    // Zolang dat zo is, telt het trappen niet mee.
+    public void HoldSpeed(float speed)
+    {
+        held = true;
+        heldSpeed = speed;
+        currentSpeed = speed;
+    }
+
+    public void ReleaseSpeed()
+    {
+        held = false;
+    }
 
     // RouteMover roept dit elk frame aan met de band van het huidige stuk.
     public void SetBand(float min, float max)
@@ -38,10 +55,10 @@ public class ShipSpeed : MonoBehaviour
         minSpeed = min;
         maxSpeed = max;
 
-        // Allereerste keer: meteen op de minimumsnelheid starten.
+        // Allereerste keer: vanuit stilstand vertrekken en rustig optrekken (niet springen).
         if (!started)
         {
-            currentSpeed = min;
+            currentSpeed = 0f;
             started = true;
         }
     }
@@ -53,6 +70,12 @@ public class ShipSpeed : MonoBehaviour
 
         // 2. Doelsnelheid binnen de band
         targetSpeed = minSpeed + p * (maxSpeed - minSpeed);
+
+        if (held)
+        {
+            currentSpeed = heldSpeed;
+            return;
+        }
 
         // 3. Rustig ernaartoe
         currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
