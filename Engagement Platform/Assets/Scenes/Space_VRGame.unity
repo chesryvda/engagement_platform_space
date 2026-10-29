@@ -109360,8 +109360,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.75, g: 0.88, b: 1, a: 0.35}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.85}
+      minColor: {r: 0.85, g: 0.93, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.6}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -113964,8 +113964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ec8957f6c1e9b40a59f379e24fcf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceDustSettings
-  density: 1.4
-  size: 1
+  density: 1.7
+  size: 1.4
 --- !u!114 &908591358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113982,9 +113982,9 @@ MonoBehaviour:
   slowSpeed: 16
   fastSpeed: 32
   smoothing: 6
-  maxStretch: 0.05
+  maxStretch: 0.1
   fastDensityMultiplier: 1.5
-  slowBrightness: 0.7
+  slowBrightness: 0.9
   fastBrightness: 1
   intensity: 0
 --- !u!1 &909609891

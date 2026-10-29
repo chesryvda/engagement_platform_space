@@ -22,13 +22,13 @@ public class SpaceDustSpeedFx : MonoBehaviour
 
     [Header("Uitrekken")]
     [Tooltip("Hoeveel de stipjes uitrekken. 0 = nooit, hoger = langere streepjes.")]
-    [Range(0f, 0.15f)] public float maxStretch = 0.05f;
+    [Range(0f, 0.2f)] public float maxStretch = 0.1f;
 
     [Header("Hoeveelheid en helderheid")]
     [Tooltip("Extra hoeveelheid stof bij volledige snelheid (1 = niets extra).")]
     [Range(1f, 3f)] public float fastDensityMultiplier = 1.5f;
     [Tooltip("Helderheid (doorzichtigheid) in een scene.")]
-    [Range(0f, 1f)] public float slowBrightness = 0.7f;
+    [Range(0f, 1f)] public float slowBrightness = 0.9f;
     [Tooltip("Helderheid bij volledige snelheid.")]
     [Range(0f, 1f)] public float fastBrightness = 1f;
 

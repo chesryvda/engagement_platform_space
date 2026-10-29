@@ -48,8 +48,8 @@ Material:
     - _Blend: 2
     - _BlendOp: 0
     - _CameraFadingEnabled: 1
-    - _CameraFarFadeDistance: 8
-    - _CameraNearFadeDistance: 2.5
+    - _CameraFarFadeDistance: 5
+    - _CameraNearFadeDistance: 1.5
     - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
@@ -71,10 +71,10 @@ Material:
     - _Surface: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.8, g: 0.9, b: 1, a: 1}
+    - _BaseColor: {r: 0.9, g: 0.95, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
-    - _CameraFadeParams: {r: 2.5, g: 0.18181819, b: 0, a: 0}
-    - _Color: {r: 0.8, g: 0.9, b: 1, a: 1}
+    - _CameraFadeParams: {r: 1.5, g: 0.2857143, b: 0, a: 0}
+    - _Color: {r: 0.9, g: 0.95, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
