@@ -60948,6 +60948,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 28631cf6b6cc649f3be6c50d5e87b077, type: 3}
   m_PrefabInstance: {fileID: 493288329}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &494985526 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3194092324611523134, guid: a0cc4ac6c1c9c4e159e844c2bd737388, type: 3}
+  m_PrefabInstance: {fileID: 2093119484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &495145220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73589,6 +73594,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e632205d0e55c4f0aa8cd499e8410c53, type: 3}
   m_PrefabInstance: {fileID: 607129953}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &607837968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607837970}
+  - component: {fileID: 607837969}
+  m_Layer: 0
+  m_Name: DebrisTumble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &607837969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607837968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e82ee37f48a4866ab54b94b7a27a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DebrisTumble
+  root: {fileID: 682994810}
+  routeMover: {fileID: 1254539343}
+  maxDistanceToRoute: 20
+  alwaysInclude:
+  - DebrisProp
+  exclude:
+  - TechnopolisTower
+  minSpeed: 3
+  maxSpeed: 10
+  seed: 7
+  tumblingPieces: 0
+--- !u!4 &607837970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607837968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &607994556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81913,6 +81973,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684742936}
   m_Mesh: {fileID: -6400861921389496487, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
+--- !u!1 &684932453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 684932455}
+  - component: {fileID: 684932454}
+  m_Layer: 0
+  m_Name: ISSFlyover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &684932454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684932453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc17ff7cab34e49ea853aeba40ecd2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ISSFlyover
+  target: {fileID: 2145389187}
+  routeMover: {fileID: 1254539343}
+  focusStops: {fileID: 1254539348}
+  stopName: ISS
+  earth: {fileID: 494985526}
+  crossDistanceOnRoute: 630
+  heightAboveRoute: 49
+  startOffset: 120
+  slowSpeed: 4
+  maxSpeed: 10
+  speedChange: 1
+  slowZoneStartOnRoute: 450
+  secondsBeforeCrossing: 8
+  tiltAngle: 15
+  tiltDuration: 12
+  phase: waiting
+  positionOnOrbit: 0
+  speed: 0
+  tiltProgress: 0
+--- !u!4 &684932455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684932453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685607966
 GameObject:
   m_ObjectHideFlags: 0
@@ -272113,8 +272236,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145389186}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.15496078, y: 0.060123287, z: 0.76453793, w: 0.62277925}
-  m_LocalPosition: {x: 21.589422, y: 692.48914, z: 2799.2268}
+  m_LocalRotation: {x: -0.31762433, y: -0.14889689, z: 0.75230503, w: 0.5576574}
+  m_LocalPosition: {x: -1541.5789, y: 268.24902, z: 2412.6282}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -272221,7 +272344,7 @@ Transform:
   - {fileID: 5067917830779483812}
   - {fileID: 1031839858766120843}
   m_Father: {fileID: 1897984179492819103}
-  m_LocalEulerAnglesHint: {x: -16.556, y: -2.262, z: 103.088}
+  m_LocalEulerAnglesHint: {x: -7.482, y: -40.504, z: 109.668}
 --- !u!1001 &2145591830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283774,5 +283897,7 @@ SceneRoots:
   - {fileID: 490465245}
   - {fileID: 1143766932}
   - {fileID: 350274591}
+  - {fileID: 684932455}
+  - {fileID: 607837970}
   - {fileID: 1786434764}
   - {fileID: 1324317942}
