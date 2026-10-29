@@ -114109,8 +114109,6 @@ MonoBehaviour:
   fastDensityMultiplier: 1.5
   slowBrightness: 0.9
   fastBrightness: 1
-  warpStretchMultiplier: 12
-  warpDensityMultiplier: 1.5
   intensity: 0
 --- !u!1 &909609891
 GameObject:
@@ -158414,7 +158412,6 @@ GameObject:
   - component: {fileID: 1254539343}
   - component: {fileID: 1254539342}
   - component: {fileID: 1254539348}
-  - component: {fileID: 1254539349}
   m_Layer: 0
   m_Name: RouteSystem
   m_TagString: Untagged
@@ -158680,44 +158677,6 @@ MonoBehaviour:
   stopAtEnd: 1
   activeStop: 
   stopTime: 0
---- !u!114 &1254539349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254539341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2fb084fc422ae64f979cd9d4ef0cf65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FocusStopsPedal
-  original: {fileID: 0}
-  routeMover: {fileID: 0}
-  shipSpeed: {fileID: 0}
-  glideLength: 48
-  glideSpeedMin: 3
-  glideSpeedMax: 5
-  minBrakeDistance: 70
-  brakeRate: 12
-  frontAngle: 35
-  stopAtEnd: 1
-  onStopBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  onGlideBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  onGlideEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  onStopEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  activeStop: 
-  phaseName: 
-  stopTime: 0
-  glideSecondsNow: 0
 --- !u!1001 &1256541251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166919,70 +166878,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323861563}
   m_Mesh: {fileID: 5598451789707041408, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
---- !u!1 &1324317940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1324317942}
-  - component: {fileID: 1324317941}
-  m_Layer: 0
-  m_Name: TussenstukWarp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1324317941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324317940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 964ae0931b2514e438045309975258f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TussenstukWarp
-  route: {fileID: 1254539343}
-  dust: {fileID: 908591358}
-  segmentIndex: 4
-  rampInMeters: 25
-  rampOutMeters: 80
-  pcCamera: {fileID: 1928546335}
-  fovPulse: 6
-  fovPulseDuration: 1.5
-  shakeTargets:
-  - {fileID: 1898580164}
-  - {fileID: 59049102}
-  - {fileID: 1056329355}
-  - {fileID: 1928822748}
-  - {fileID: 1689869256}
-  - {fileID: 333597954}
-  shakePosition: 0
-  shakeRotation: 0
-  shakeSpeed: 9
-  warp: 0
-  shake: 0
---- !u!4 &1324317942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324317940}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1326018347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239923,11 +239818,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898206004}
   m_Mesh: {fileID: -2576376389849669398, guid: 49c05b55d513941a49a3d280f77e1a29, type: 3}
---- !u!4 &1898580164 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3716994613445347643, guid: 9a41c92c4eda144e0843399e0b452d93, type: 3}
-  m_PrefabInstance: {fileID: 2145591830}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1899666945
 GameObject:
   m_ObjectHideFlags: 0
@@ -283900,4 +283790,3 @@ SceneRoots:
   - {fileID: 684932455}
   - {fileID: 607837970}
   - {fileID: 1786434764}
-  - {fileID: 1324317942}
