@@ -32,8 +32,18 @@ public class SpaceDustSpeedFx : MonoBehaviour
     [Tooltip("Helderheid bij volledige snelheid.")]
     [Range(0f, 1f)] public float fastBrightness = 1f;
 
+    [Header("Warp (wordt door TussenstukWarp aangestuurd)")]
+    [Tooltip("Hoeveel langer de streepjes worden bij volle warp (1 = niets extra).")]
+    [Range(1f, 30f)] public float warpStretchMultiplier = 12f;
+    [Tooltip("Extra hoeveelheid stof bij volle warp (1 = niets extra).")]
+    [Range(1f, 2f)] public float warpDensityMultiplier = 1.5f;
+
     [Header("Live (alleen kijken)")]
     [SerializeField, Range(0f, 1f)] private float intensity;
+
+    // 0 = geen warp, 1 = volle warp. TussenstukWarp zet dit.
+    public float WarpBoost { get; set; }
+    public float Intensity => intensity;
 
     private ParticleSystemRenderer rend;
     private SpaceDustSettings settings;
@@ -68,7 +78,7 @@ public class SpaceDustSpeedFx : MonoBehaviour
         if (intensity > 0.02f)
         {
             if (rend.renderMode != ParticleSystemRenderMode.Stretch) rend.renderMode = ParticleSystemRenderMode.Stretch;
-            rend.cameraVelocityScale = intensity * maxStretch;
+            rend.cameraVelocityScale = intensity * maxStretch * Mathf.Lerp(1f, warpStretchMultiplier, WarpBoost);
         }
         else if (rend.renderMode != ParticleSystemRenderMode.Billboard)
         {
@@ -77,7 +87,7 @@ public class SpaceDustSpeedFx : MonoBehaviour
         }
 
         // 2. Hoeveelheid
-        if (settings != null) settings.SetSpeedFactor(Mathf.Lerp(1f, fastDensityMultiplier, intensity));
+        if (settings != null) settings.SetSpeedFactor(Mathf.Lerp(1f, fastDensityMultiplier, intensity) * Mathf.Lerp(1f, warpDensityMultiplier, WarpBoost));
 
         // 3. Helderheid
         rend.GetPropertyBlock(block);
