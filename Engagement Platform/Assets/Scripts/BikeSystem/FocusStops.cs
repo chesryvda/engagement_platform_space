@@ -26,6 +26,8 @@ public class FocusStops : MonoBehaviour
         public bool keepInFront = true;
         [Tooltip("Zonder 'Keep In Front': hoeveel meter vóór het object het schip al bijna stilstaat (negatief = pas erna)")]
         public float crawlLead = 10f;
+        [Tooltip("Eigen glijsnelheid voor deze stop (m/s). 0 = de algemene 'Crawl Speed' hieronder gebruiken.")]
+        public float ownCrawlSpeed = 0f;
         [Tooltip("Live (alleen kijken): waar op de route het object ligt, in meter")]
         public float distanceOnRoute;
         [Tooltip("Live (alleen kijken): hoe ver het object naast de route ligt, in meter")]
@@ -105,13 +107,13 @@ public class FocusStops : MonoBehaviour
             {
                 // Het traag glijden moet gedaan zijn voor het object te ver opzij komt.
                 float glideEnd = stop.distanceOnRoute - stop.sideDistance / Mathf.Tan(frontAngle * Mathf.Deg2Rad);
-                crawlStart = glideEnd - Mathf.Min(crawlSpeed, speed) * PlanCrawlTime(stop, speed);
+                crawlStart = glideEnd - Mathf.Min(CrawlOf(stop), speed) * PlanCrawlTime(stop, speed);
             }
             else
             {
                 crawlStart = stop.distanceOnRoute - stop.crawlLead;
             }
-            float brakeDistance = Mathf.Max(0f, (speed * speed - crawlSpeed * crawlSpeed) / (2f * brakeRate));
+            float brakeDistance = Mathf.Max(0f, (speed * speed - CrawlOf(stop) * CrawlOf(stop)) / (2f * brakeRate));
             if (distance >= crawlStart - brakeDistance)
             {
                 Begin(stop, speed);
@@ -138,7 +140,7 @@ public class FocusStops : MonoBehaviour
         activeStop = stop.name;
 
         v0 = speed;
-        vc = Mathf.Min(crawlSpeed, v0);
+        vc = Mathf.Min(CrawlOf(stop), v0);
         v1 = Mathf.Max(vc, shipSpeed.TargetSpeed);
         rate = brakeRate;
 
@@ -152,10 +154,16 @@ public class FocusStops : MonoBehaviour
         tBrake = (v0 - vc) / rate;
     }
 
+    // Glijsnelheid voor deze stop: zijn eigen snelheid, of anders de algemene.
+    private float CrawlOf(Stop stop)
+    {
+        return stop.ownCrawlSpeed > 0f ? stop.ownCrawlSpeed : crawlSpeed;
+    }
+
     // Hoe lang het schip traag glijdt als de stop nu met deze snelheid begint.
     private float PlanCrawlTime(Stop stop, float speed)
     {
-        float low = Mathf.Min(crawlSpeed, speed);
+        float low = Mathf.Min(CrawlOf(stop), speed);
         float back = Mathf.Max(low, shipSpeed.TargetSpeed);
         float change = (speed - low) + (back - low);
         return Mathf.Max(0f, stop.duration - change / brakeRate);

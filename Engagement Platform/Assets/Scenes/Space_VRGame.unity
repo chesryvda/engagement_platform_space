@@ -161508,6 +161508,7 @@ MonoBehaviour:
     duration: 15
     keepInFront: 1
     crawlLead: 10
+    ownCrawlSpeed: 0
     distanceOnRoute: 0
     sideDistance: 0
   - name: Ruimteafval
@@ -161515,13 +161516,15 @@ MonoBehaviour:
     duration: 15
     keepInFront: 0
     crawlLead: 17
+    ownCrawlSpeed: 0
     distanceOnRoute: 0
     sideDistance: 0
   - name: Tesla
     target: {fileID: 3887793526973230419}
-    duration: 15
+    duration: 20.7
     keepInFront: 0
-    crawlLead: 12
+    crawlLead: 7.7
+    ownCrawlSpeed: 0.7
     distanceOnRoute: 0
     sideDistance: 0
   - name: "Astero\xEFden"
@@ -161529,6 +161532,7 @@ MonoBehaviour:
     duration: 15
     keepInFront: 0
     crawlLead: 70
+    ownCrawlSpeed: 0
     distanceOnRoute: 0
     sideDistance: 0
   crawlSpeed: 3
@@ -280133,7 +280137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.57
+      value: 44.5709
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalPosition.y
@@ -280141,23 +280145,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 943.59
+      value: 943.58997
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.1330569
+      value: 0.13305698
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09047478
+      value: 0.090474784
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9868508
+      value: 0.98685086
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.015351115
+      value: 0.015351122
       objectReference: {fileID: 0}
     - target: {fileID: 4816035627166219287, guid: 2f9c6f537bd8640b893ea7d415ad4c32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
