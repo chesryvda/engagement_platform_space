@@ -48,12 +48,19 @@ public class ISSFlyover : MonoBehaviour
     [Tooltip("When the slow zone starts, the ISS should be this many seconds (at the slow pace) from crossing.")]
     public float secondsBeforeCrossing = 8f;
 
+    [Header("Tilt")]
+    [Tooltip("During the slow zone the ISS slowly tilts around its own middle so its underside turns toward the ship, in degrees.")]
+    [Range(0f, 45f)] public float tiltAngle = 15f;
+    [Tooltip("How long the tilt takes, in seconds. It starts when the ship starts slowing down and then stays.")]
+    [Min(0.1f)] public float tiltDuration = 12f;
+
     [Header("Live (read only)")]
     [SerializeField] private string phase = "waiting";
     [SerializeField] private float positionOnOrbit; // metres from the crossing point, negative = right side
     [SerializeField] private float speed;
+    [SerializeField, Range(0f, 1f)] private float tiltProgress;
 
-    Vector3 center, radial, along, offsetFromCenter;
+    Vector3 center, radial, along, offsetFromCenter, tiltAxis;
     float radius;
     Quaternion crossRotation;
     FieldInfo activeStopField;
@@ -75,6 +82,8 @@ public class ISSFlyover : MonoBehaviour
         radius = Vector3.Distance(crossPoint, center);
         radial = (crossPoint - center).normalized;
         along = Vector3.ProjectOnPlane(-routeRight, radial).normalized;
+        // Turning around this axis rolls the ISS's underside back toward the ship coming from behind.
+        tiltAxis = Vector3.Cross(-radial, -routeForward).normalized;
 
         // Keep the ISS's current look; move its middle (not its far-away pivot) onto the orbit.
         Vector3 issMiddle = MiddleOf(target);
@@ -116,17 +125,24 @@ public class ISSFlyover : MonoBehaviour
 
         speed = Mathf.MoveTowards(speed, wanted, speedChange * Time.deltaTime);
         positionOnOrbit += speed * Time.deltaTime;
+
+        if (slowZoneSeen && tiltProgress < 1f)
+            tiltProgress = Mathf.Min(1f, tiltProgress + Time.deltaTime / tiltDuration);
+
         Apply();
     }
 
-    // Place the ISS on its orbit; it tilts along with the Earth's curve so it stays parallel to the surface.
+    // Place the ISS on its orbit; it follows the Earth's curve so it stays parallel to the surface,
+    // plus its own tilt toward the ship around its middle.
     void Apply()
     {
         float angle = positionOnOrbit / radius;
         Vector3 dir = radial * Mathf.Cos(angle) + along * Mathf.Sin(angle);
-        Quaternion tilt = Quaternion.FromToRotation(radial, dir);
+        Quaternion curve = Quaternion.FromToRotation(radial, dir);
+        Quaternion lean = Quaternion.AngleAxis(tiltAngle * Mathf.SmoothStep(0f, 1f, tiltProgress), tiltAxis);
+        Quaternion turn = curve * lean;
         Vector3 middle = center + dir * radius;
-        target.SetPositionAndRotation(middle + tilt * offsetFromCenter, tilt * crossRotation);
+        target.SetPositionAndRotation(middle + turn * offsetFromCenter, turn * crossRotation);
     }
 
     static Vector3 MiddleOf(Transform t)

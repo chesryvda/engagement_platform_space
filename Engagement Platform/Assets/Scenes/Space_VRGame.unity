@@ -81952,17 +81952,20 @@ MonoBehaviour:
   focusStops: {fileID: 1254539348}
   stopName: ISS
   earth: {fileID: 494985526}
-  crossDistanceOnRoute: 620
-  heightAboveRoute: 51
+  crossDistanceOnRoute: 630
+  heightAboveRoute: 49
   startOffset: 120
   slowSpeed: 4
   maxSpeed: 10
   speedChange: 1
   slowZoneStartOnRoute: 450
   secondsBeforeCrossing: 8
+  tiltAngle: 15
+  tiltDuration: 12
   phase: waiting
   positionOnOrbit: 0
   speed: 0
+  tiltProgress: 0
 --- !u!4 &684932455
 Transform:
   m_ObjectHideFlags: 0
