@@ -28553,6 +28553,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241926278}
   m_Mesh: {fileID: -456337228036930017, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
+--- !u!4 &242206460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5073992054230010954, guid: 26e54aa802e1f464e9c3c7124085df99, type: 3}
+  m_PrefabInstance: {fileID: 333597953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &242339077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40377,7 +40382,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6555654243041031090, guid: 26e54aa802e1f464e9c3c7124085df99, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2101587835}
   m_SourcePrefab: {fileID: 100100000, guid: 26e54aa802e1f464e9c3c7124085df99, type: 3}
 --- !u!4 &333597954 stripped
 Transform:
@@ -261867,6 +261875,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040826783}
   m_Mesh: {fileID: -1694408487446831706, guid: 49c05b55d513941a49a3d280f77e1a29, type: 3}
+--- !u!4 &2040901629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 947337614510215211, guid: 26e54aa802e1f464e9c3c7124085df99, type: 3}
+  m_PrefabInstance: {fileID: 333597953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2041167723
 GameObject:
   m_ObjectHideFlags: 0
@@ -268765,6 +268778,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101410263}
   m_Mesh: {fileID: 580150366056075275, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
+--- !u!1 &2101587834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6555654243041031090, guid: 26e54aa802e1f464e9c3c7124085df99, type: 3}
+  m_PrefabInstance: {fileID: 333597953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2101587835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101587834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e13b44e0f39a4f918f3ddfda0b2bb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MascotWiggle
+  upper: {fileID: 2040901629}
+  springs: {fileID: 242206460}
+  cadence: {fileID: 1254539345}
+  routeMover: {fileID: 1254539343}
+  focusStops: {fileID: 1254539348}
+  rpmForMax: 80
+  maxSway: 10
+  maxFrequency: 3
+  minSway: 1
+  minFrequency: 0.6
+  calmSway: 3
+  calmFrequency: 0.45
+  response: 0.6
+  squash: 0.05
+  sway: 0
+  frequency: 0
 --- !u!1 &2101764307
 GameObject:
   m_ObjectHideFlags: 0
