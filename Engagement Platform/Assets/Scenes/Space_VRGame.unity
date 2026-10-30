@@ -245390,6 +245390,307 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912257121}
   m_Mesh: {fileID: -4465478199463738920, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
+--- !u!1 &1912341103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912341108}
+  - component: {fileID: 1912341107}
+  - component: {fileID: 1912341106}
+  - component: {fileID: 1912341105}
+  - component: {fileID: 1912341104}
+  m_Layer: 0
+  m_Name: ExperienceAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1912341104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912341103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970156e309935da4bb0fa3451ce4e833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RouteAudio
+  routeMover: {fileID: 1254539343}
+  focusStops: {fileID: 1254539348}
+  shipSpeed: {fileID: 1254539344}
+  ship: {fileID: 371570809}
+  issStop: ISS
+  debrisStop: Ruimteafval
+  teslaStop: Tesla
+  asteroidStop: "Astero\xEFden"
+  calmMusic: {fileID: 8300000, guid: 5d694746e727642409ee7df991c8f80f, type: 3}
+  wonderMusic: {fileID: 8300000, guid: b728df54db0674f79bd7028087701fa3, type: 3}
+  tenseMusic: {fileID: 8300000, guid: c85454b0fa3b04d65b7b48116f0e7412, type: 3}
+  climaxMusic: {fileID: 8300000, guid: e5a479561d582448886b84db1af7a618, type: 3}
+  finaleMusic: {fileID: 8300000, guid: efc357b58965a48d9a6616210315bac9, type: 3}
+  musicFade: 3
+  whooshes:
+  - {fileID: 8300000, guid: ce42104686a7f45549535f942f02c801, type: 3}
+  - {fileID: 8300000, guid: cad05bb0e30a543a08326d71f08408ac, type: 3}
+  swell: {fileID: 8300000, guid: 3370a4706bd2e435f93b6df01cc14dfa, type: 3}
+  radarPing: {fileID: 8300000, guid: 035de0d5eeec74a85987827d04fc1f4b, type: 3}
+  radarDistance: 300
+  cueSpacing: 2.5
+  missionControlRadio: {fileID: 8300000, guid: 18e8d222749f040c1bfad27d10ff7776, type: 3}
+  satelliteBeep: {fileID: 8300000, guid: 4a05151f54df5414c9e5a63339bba4e7, type: 3}
+  satelliteHum: {fileID: 8300000, guid: 8c6489d5d6b7146d1ac0e021a78bd578, type: 3}
+  dataCrackle: {fileID: 8300000, guid: 49e35f93920094acf9cdf6ea2bc92bf0, type: 3}
+  warningAlarm: {fileID: 8300000, guid: 005d2d19c141c40299b646891d72f0ef, type: 3}
+  heavyClanks:
+  - {fileID: 8300000, guid: e29f308c95ee84a55994f4b4673be8a9, type: 3}
+  - {fileID: 8300000, guid: aec077c90c4c348b6861c53d1b768d82, type: 3}
+  panelCreak: {fileID: 8300000, guid: 77c2e9d059fc6406cb923a9d22875315, type: 3}
+  creakingPanels: 2
+  debrisTicks:
+    clips:
+    - {fileID: 8300000, guid: 8cd6c716d2f6a4c54820b9d450a5a1a9, type: 3}
+    - {fileID: 8300000, guid: f438054fb672748318a0f0f4fb7ca927, type: 3}
+    - {fileID: 8300000, guid: 3c83acdcbc0a54457a71526c063ee260, type: 3}
+    - {fileID: 8300000, guid: b375b84ea6f08400897be34dea7ba918, type: 3}
+    - {fileID: 8300000, guid: 3c8e7ca0512204a5b893cc3830027a0b, type: 3}
+    - {fileID: 8300000, guid: f35612a11795a4194b5c2b78bd29b114, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 1.2, y: 3.5}
+    level: {x: 0.35, y: 0.7}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 1.2, y: 2.5}
+    height: {x: -0.3, y: 1}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 30
+    hearingRange: 12
+  debrisWhooshes:
+    clips:
+    - {fileID: 8300000, guid: 33b0ada1ef6e24a5aac4650dcef958fb, type: 3}
+    - {fileID: 8300000, guid: 7ef876d87a92b4b6890bd346a4f06f9e, type: 3}
+    - {fileID: 8300000, guid: 1051d4a85b69b494b8abc15de1dca7bc, type: 3}
+    category: 2
+    placement: 1
+    interval: {x: 4.5, y: 8}
+    level: {x: 0.6, y: 1}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 1.5, y: 4}
+    height: {x: -0.5, y: 1.5}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 25
+    hearingRange: 50
+  radioTuneIn: {fileID: 8300000, guid: d9bcc75662e774192bcc66161efe5139, type: 3}
+  carRadio: {fileID: 8300000, guid: 6846510f08bde4e4bbb52a4a7b65d254, type: 3}
+  radioDistance: 350
+  hornRadio: {fileID: 8300000, guid: ad1288b5450cf4f72aaaec1cf2c7786a, type: 3}
+  smallFlybys:
+    clips:
+    - {fileID: 8300000, guid: 9670ae5ec89664809927c0db8157789f, type: 3}
+    - {fileID: 8300000, guid: 6e02ac02e19834f22be7233c61d05dcf, type: 3}
+    - {fileID: 8300000, guid: b0a82989ae20047e3a5adf65c73f031f, type: 3}
+    category: 2
+    placement: 1
+    interval: {x: 2.5, y: 5}
+    level: {x: 0.6, y: 0.9}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 6, y: 18}
+    height: {x: -4, y: 6}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 40
+    hearingRange: 90
+  largeFlybys:
+    clips:
+    - {fileID: 8300000, guid: 55e2c8ad7392344d1a1c5d417c046e09, type: 3}
+    - {fileID: 8300000, guid: 16e21dfb3273a4401b853ee916c22551, type: 3}
+    category: 2
+    placement: 1
+    interval: {x: 9, y: 15}
+    level: {x: 0.8, y: 1}
+    pitch: {x: 0.95, y: 1.05}
+    distance: {x: 20, y: 45}
+    height: {x: -8, y: 10}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 90
+    hearingRange: 180
+  hullGroans:
+    clips:
+    - {fileID: 8300000, guid: 874fb518820cd4bc7b58f4dc631440f1, type: 3}
+    - {fileID: 8300000, guid: 18bad6f9effed4e4793ca7a04a31cf97, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 9, y: 16}
+    level: {x: 0.5, y: 0.8}
+    pitch: {x: 0.9, y: 1.05}
+    distance: {x: 1.5, y: 3}
+    height: {x: -0.5, y: 1}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 30
+    hearingRange: 15
+  rockScrape:
+    clips:
+    - {fileID: 8300000, guid: 5b1a0d448b29c41beaab64c10610bcf1, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 14, y: 24}
+    level: {x: 0.6, y: 0.9}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 1.5, y: 2.5}
+    height: {x: -0.3, y: 0.8}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 30
+    hearingRange: 12
+  riser: {fileID: 8300000, guid: 6044d6a0a294b43af9a6ba8703ebc64a, type: 3}
+  moonBoom: {fileID: 8300000, guid: 81ea9d572a3e1483da9e7c02fcaf8c27, type: 3}
+  endLevel: 0.7
+  engineSpooldownLead: 4
+  engineAudio: {fileID: 1912341106}
+  endFade: {fileID: 1254539349}
+  whiteoutShimmer: {fileID: 8300000, guid: b0044fa3254854a26b421bebfda2cbfd, type: 3}
+  sonicLogo: {fileID: 8300000, guid: e0ed3b09a853d42fab349c6d20816c9b, type: 3}
+  lisaRadioOn: {fileID: 8300000, guid: 4875c153e98f546f287d5ebe9fb3ebf7, type: 3}
+  lisaRadioOff: {fileID: 8300000, guid: ebffd4a166d844dcd874b3dbabdad7b1, type: 3}
+  lisaWavesAppear: {fileID: 8300000, guid: 003fc392b6e824322b942d2d0ad9acbe, type: 3}
+  scene: 0
+  inObjectZone: 0
+--- !u!114 &1912341105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912341103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672d85e582f67884eb8fe53b267be835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CockpitAmbience
+  ship: {fileID: 371570809}
+  playStartupSequence: 1
+  systemWake: {fileID: 8300000, guid: 9e7e1f61ab7ed47f7a40d3bd63111449, type: 3}
+  spaceDrone: {fileID: 8300000, guid: 661f5dc4796574bff943bcab69f00a56, type: 3}
+  lifesupportLoop: {fileID: 8300000, guid: 93d3365518fdc4e5ca2cfd6cc13ade76, type: 3}
+  dashboardHumLoop: {fileID: 8300000, guid: ea1a6c348461b4101a353430e48039ac, type: 3}
+  dashboardTicks:
+    clips:
+    - {fileID: 8300000, guid: e97116e4ac79041749a36c71aeda67b1, type: 3}
+    - {fileID: 8300000, guid: 5b2cc467d1feb420d90dd394d61839dd, type: 3}
+    - {fileID: 8300000, guid: c0fb9177ee29447cca86e80d78d3e7a0, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 5, y: 12}
+    level: {x: 0.3, y: 0.5}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 0.6, y: 1.2}
+    height: {x: -0.7, y: -0.1}
+    angle: {x: -50, y: 50}
+    flybyHalfLength: 30
+    hearingRange: 8
+  relayClicks:
+    clips:
+    - {fileID: 8300000, guid: 7f71de2f32cfe474580f99b358cf0f93, type: 3}
+    - {fileID: 8300000, guid: 7f7f992589a084b86b0dbdba6831a18c, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 9, y: 20}
+    level: {x: 0.35, y: 0.55}
+    pitch: {x: 0.9, y: 1.1}
+    distance: {x: 0.6, y: 1.2}
+    height: {x: -0.7, y: -0.1}
+    angle: {x: -60, y: 60}
+    flybyHalfLength: 30
+    hearingRange: 8
+  hullCreaks:
+    clips:
+    - {fileID: 8300000, guid: 0bd663dc597f4487887ba7a46095f32c, type: 3}
+    - {fileID: 8300000, guid: 98dfd98101873471b8b48e4731e5a58f, type: 3}
+    category: 2
+    placement: 0
+    interval: {x: 18, y: 40}
+    level: {x: 0.4, y: 0.7}
+    pitch: {x: 0.9, y: 1.05}
+    distance: {x: 2, y: 3.5}
+    height: {x: -0.5, y: 1}
+    angle: {x: -180, y: 180}
+    flybyHalfLength: 30
+    hearingRange: 15
+--- !u!114 &1912341106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912341103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebbefc2c5a5f8c48899dcbfcb35fe70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EngineAudio
+  routeMover: {fileID: 1254539343}
+  shipSpeed: {fileID: 1254539344}
+  focusStops: {fileID: 1254539348}
+  ship: {fileID: 371570809}
+  idleLoop: {fileID: 8300000, guid: a604b9c1c3e004250b1a358f1951800a, type: 3}
+  lowLoop: {fileID: 8300000, guid: 1a218d905c09f4d4896aaa13ceb2c998, type: 3}
+  highLoop: {fileID: 8300000, guid: 8d87b036239ba4abfa62298a63956bd5, type: 3}
+  subRumbleLoop: {fileID: 8300000, guid: 5d694cf6f779a468c944bdd47e408513, type: 3}
+  limiterLoop: {fileID: 8300000, guid: 8b2d99484648e438f8a87e70f92e6268, type: 3}
+  startup: {fileID: 8300000, guid: d9bb04c5b1a514332ba636ecdd018ed7, type: 3}
+  spooldown: {fileID: 8300000, guid: 3e964ca38bb6a4a00b2ba85aeae1b775, type: 3}
+  engineOffset: {x: 0, y: 0.3, z: -2.5}
+  pitchRange: {x: 0.8, y: 1.3}
+  crawlLevel: 0.35
+  limiterMaxLevel: 0.5
+  fullSpeed: 0
+  startupFade: 2.5
+  zoneEngineLevel: 0.08
+  zonePitch: 0.7
+  windDownTime: 2.5
+  windUpTime: 1.5
+  speedNorm: 0
+  state: idle
+--- !u!114 &1912341107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912341103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdccdda8de763442ad8de0c39635da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExperienceAudio
+  master: 1
+  music: 0.55
+  ambience: 0.45
+  effects: 0.8
+  interfaceSounds: 0.6
+  engine: 0.5
+  duckLevel: 0.4
+  duckFadeTime: 0.4
+  lisaSpeaking: 0
+--- !u!4 &1912341108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912341103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1912902788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288978,3 +289279,4 @@ SceneRoots:
   - {fileID: 586705581}
   - {fileID: 1660704552}
   - {fileID: 1786434764}
+  - {fileID: 1912341108}
