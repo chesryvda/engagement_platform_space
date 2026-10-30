@@ -116962,6 +116962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpaceDustSpeedFx
   shipSpeed: {fileID: 1254539344}
+  focusStops: {fileID: 0}
+  stopFadeTime: 1.5
+  returnFadeTime: 0.5
   slowSpeed: 16
   fastSpeed: 32
   smoothing: 6
@@ -116970,6 +116973,7 @@ MonoBehaviour:
   slowBrightness: 0.9
   fastBrightness: 1
   intensity: 0
+  visible: 1
 --- !u!1 &909609891
 GameObject:
   m_ObjectHideFlags: 0
@@ -161272,6 +161276,7 @@ GameObject:
   - component: {fileID: 1254539343}
   - component: {fileID: 1254539342}
   - component: {fileID: 1254539348}
+  - component: {fileID: 1254539349}
   m_Layer: 0
   m_Name: RouteSystem
   m_TagString: Untagged
@@ -161541,6 +161546,34 @@ MonoBehaviour:
   stopAtEnd: 1
   activeStop: 
   stopTime: 0
+--- !u!114 &1254539349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254539341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1abc4d60ab466cbfd8a182fad1c4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndFade
+  routeMover: {fileID: 1254539343}
+  fadeMaterial: {fileID: 2100000, guid: c56775b83fbd642aaac556b2501f8da7, type: 2}
+  fadeLength: 200
+  whiteBefore: 5
+  curve: 2
+  fadeColor: {r: 1, g: 1, b: 1, a: 1}
+  onFullyWhite:
+    m_PersistentCalls:
+      m_Calls: []
+  logo: {fileID: 2800000, guid: 845827363b4504228a53d7a663ee1364, type: 3}
+  logoDelay: 0.5
+  logoFadeTime: 2
+  logoDistance: 2.5
+  logoWidth: 1.6
+  amount: 0
+  logoAmount: 0
 --- !u!1001 &1256541251
 PrefabInstance:
   m_ObjectHideFlags: 0
