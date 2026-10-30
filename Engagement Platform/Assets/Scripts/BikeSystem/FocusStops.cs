@@ -55,6 +55,11 @@ public class FocusStops : MonoBehaviour
     [SerializeField] private string activeStop = "";
     [SerializeField] private float stopTime;
 
+    // Dit lezen andere scripts (bv. het ruimtestof): loopt er nu een stop?
+    public bool InStop => inStop;
+    // Afremmen of traag glijden (dus nog niet aan het optrekken na het object)?
+    public bool SlowingOrGliding => inStop && stopTime < tBrake + tCrawl;
+
     private int next;          // de volgende stop die nog moet komen
     private bool inStop;
     private float v0, vc, v1, rate, tBrake, tCrawl;
