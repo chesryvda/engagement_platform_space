@@ -53,7 +53,12 @@ public class Cadence : MonoBehaviour
             revolutionTimes.Dequeue();
 
         // 3. Gemiddelde tijd tussen omwentelingen -> RPM
-        if (revolutionTimes.Count >= 2)
+        if (bikeInput.UsesExternalRpm)
+        {
+            // De software stuurt zelf al de RPM: die rechtstreeks gebruiken.
+            rawRpm = bikeInput.ExternalRpm;
+        }
+        else if (revolutionTimes.Count >= 2)
         {
             float oldest = revolutionTimes.Peek();
             float averageGap = (lastRevolutionTime - oldest) / (revolutionTimes.Count - 1);
