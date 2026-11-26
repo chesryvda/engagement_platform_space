@@ -5356,10 +5356,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 101<size=35%>kPa</size>
+  m_text: 101<size=45%>kPa</size>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5383,13 +5383,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 104
+  m_fontSizeBase: 104
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5407,7 +5407,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -12766,8 +12766,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3,783
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12797,7 +12797,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12815,7 +12815,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -14903,10 +14903,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 85<size=35%>%</size>
+  m_text: 79<size=45%>%</size>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14930,13 +14930,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 125
+  m_fontSizeBase: 125
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14954,7 +14954,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -93247,8 +93247,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: km/s
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93278,7 +93278,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -93296,7 +93296,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -139853,9 +139853,9 @@ MonoBehaviour:
   pressureRingMin: 90
   pressureRingMax: 110
   swaySpeed: 0.25
-  percentSuffix: <size=35%>%</size>
-  temperatureSuffix: "<size=35%>\xB0C</size>"
-  pressureSuffix: <size=35%>kPa</size>
+  percentSuffix: <size=45%>%</size>
+  temperatureSuffix: "<size=45%>\xB0C</size>"
+  pressureSuffix: <size=45%>kPa</size>
   oxygen: 0
   fuel: 0
   extraBurn: 0
@@ -153313,7 +153313,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.44640002
+  m_FillAmount: 0.45
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -166325,7 +166325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254539341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faa1abc4d60ab466cbfd8a182fad1c4e, type: 3}
   m_Name: 
@@ -196483,10 +196483,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 98<size=35%>%</size>
+  m_text: 98<size=45%>%</size>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -196510,13 +196510,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 125
+  m_fontSizeBase: 125
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -196534,7 +196534,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -225080,10 +225080,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 384,400<size=70%> KM</size>
+  m_text: 284,517<size=70%> KM</size>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -225113,7 +225113,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -225131,7 +225131,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -230295,6 +230295,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762958176}
   m_Mesh: {fileID: 4144188677884831477, guid: d935a22e37ea94a91b726d42221caae9, type: 3}
+--- !u!1 &1763758999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763759001}
+  - component: {fileID: 1763759000}
+  m_Layer: 0
+  m_Name: FallAsleepOutro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1763759000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763758999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc0a54648115489fbb321dd4656cf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FallAsleepOutro
+  routeMover: {fileID: 1254539343}
+  endFade: {fileID: 1254539349}
+  logoMaterial: {fileID: 2100000, guid: c56775b83fbd642aaac556b2501f8da7, type: 2}
+  logo: {fileID: 2800000, guid: b84fb7a6ed32a4b85bfe804cf36e413a, type: 3}
+  startBeforeEnd: 0
+  droops:
+  - closing: 0.45
+    shut: 0.25
+    reopen: 0.7
+    opening: 0.6
+    hold: 0.7
+    blur: 0.15
+  - closing: 0.6
+    shut: 0.5
+    reopen: 0.4
+    opening: 0.8
+    hold: 0.6
+    blur: 0.45
+  - closing: 1
+    shut: 0
+    reopen: 0
+    opening: 0
+    hold: 0
+    blur: 0.8
+  logoDelay: 0.6
+  logoFadeTime: 1.5
+  logoDistance: 2.5
+  logoWidth: 1.6
+  openAmount: 1
+  blurAmount: 0
+  logoAmount: 0
+  started: 0
+  closed: 0
+--- !u!4 &1763759001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763758999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1763823163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -250396,27 +250473,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9453fada78a1e4e4fa5a8a5861aa062a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WakeUpIntro
-  eyesMaterial: {fileID: 2100000, guid: cb7f5e1c234704d1bb62e5cf01d3adbe, type: 2}
   playOnStart: 1
-  startBlack: 0.8
+  waitForFirstPedal: 1
+  routeMover: {fileID: 1254539343}
+  startBlack: 0.6
   blinks:
   - open: 0.3
-    opening: 0.5
-    hold: 0.3
-    closing: 0.25
-    shut: 0.25
+    blur: 1
+    opening: 0.7
+    hold: 0.45
+    closing: 0.35
+    shut: 0.35
   - open: 0.6
-    opening: 0.3
-    hold: 0.15
-    closing: 0.15
-    shut: 0.12
+    blur: 0.3
+    opening: 0.45
+    hold: 0.25
+    closing: 0.22
+    shut: 0.18
   - open: 1
-    opening: 0.55
+    blur: 0.08
+    opening: 0.8
     hold: 0
     closing: 0
     shut: 0
-  sharpenTime: 1.2
-  startBlur: 1
+  sharpenTime: 0.9
   openAmount: 0
   blurAmount: 0
   playing: 0
@@ -264697,7 +264777,6 @@ MonoBehaviour:
   bobHeight: 0.15
   approachStartDistance: 14
   driftSpeed: 1.2
-  lineUpRate: 1.2
   glassPoint: {x: 0.1, y: 2.21, z: 1.11}
   glassNormal: {x: 0, y: 0.89, z: 0.45}
   teddyRadius: 0.5
@@ -264705,8 +264784,10 @@ MonoBehaviour:
   bounceUp: 0.9
   pushSideways: 0.9
   bumpSpin: 140
-  bumpSound: {fileID: 8300000, guid: abe21fd401c694ae89ed415891c33310, type: 3}
-  bumpVolume: 0.8
+  bumpSound: {fileID: 8300000, guid: 0d69cae86bcb64b18ad4b8f3cb8f8c7e, type: 3}
+  bumpVolume: 1
+  duckOthers: 1
+  duckTime: 1
   phase: 0
 --- !u!1 &2012960261
 GameObject:
@@ -272686,10 +272767,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "-120<size=35%>\xB0C</size>"
+  m_text: "-120<size=45%>\xB0C</size>"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
+  m_sharedMaterial: {fileID: 6504817855508420096, guid: 7fb7fe7a81c074b90af9bcdc6910d573, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -272713,13 +272794,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 104
+  m_fontSizeBase: 104
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -272737,7 +272818,7 @@ MonoBehaviour:
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
   m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
+  m_enableExtraPadding: 1
   checkPaddingRequired: 0
   m_isRichText: 1
   m_EmojiFallbackSupport: 1
@@ -295555,3 +295636,4 @@ SceneRoots:
   - {fileID: 1912341108}
   - {fileID: 1953055973}
   - {fileID: 1910656167}
+  - {fileID: 1763759001}
