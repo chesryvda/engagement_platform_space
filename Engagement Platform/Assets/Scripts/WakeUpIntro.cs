@@ -18,16 +18,16 @@ public class WakeUpIntro : MonoBehaviour
 
     [Header("Timing (seconds)")]
     [Tooltip("How long it stays black before the first blink.")]
-    public float startBlack = 2f;
-    [Tooltip("The blinks: how far the eyes open (0-1), how long opening takes, how long they stay open, how long closing takes, how long they stay shut. The last one stays open.")]
+    public float startBlack = 0.8f;
+    [Tooltip("The blinks, from slow to fast: how far the eyes open (0-1), how long opening takes, how long they stay open, how long closing takes, how long they stay shut. The last one stays open.")]
     public List<Blink> blinks = new List<Blink>
     {
-        new Blink { open = 0.25f, opening = 0.7f, hold = 0.5f, closing = 0.25f, shut = 0.8f },
-        new Blink { open = 0.5f,  opening = 0.6f, hold = 0.7f, closing = 0.22f, shut = 0.5f },
-        new Blink { open = 1f,    opening = 1.2f, hold = 0f,   closing = 0f,    shut = 0f },
+        new Blink { open = 0.3f, opening = 0.5f,  hold = 0.3f,  closing = 0.25f, shut = 0.25f },
+        new Blink { open = 0.6f, opening = 0.3f,  hold = 0.15f, closing = 0.15f, shut = 0.12f },
+        new Blink { open = 1f,   opening = 0.55f, hold = 0f,    closing = 0f,    shut = 0f },
     };
     [Tooltip("How long after the eyes are fully open the view becomes sharp.")]
-    public float sharpenTime = 2.5f;
+    public float sharpenTime = 1.2f;
 
     [Header("Blur")]
     [Tooltip("Blur at the start (0-1).")]
@@ -94,10 +94,14 @@ public class WakeUpIntro : MonoBehaviour
         time += Time.deltaTime;
         float open = OpenAt(time, out float openedAt);
 
-        // Blur: strong while blinking, fading away once the eyes are fully open.
-        float blur = startBlur;
-        if (openedAt >= 0f) blur = startBlur * (1f - Mathf.SmoothStep(0f, 1f, (time - openedAt) / Mathf.Max(0.01f, sharpenTime)));
-        else blur = startBlur * Mathf.Lerp(1f, 0.6f, Mathf.Clamp01(time / Mathf.Max(0.01f, totalBlinkTime)));
+        // Blur: strong while blinking and slowly less, then fading away once the eyes are fully open.
+        float blinking = startBlur * Mathf.Lerp(1f, 0.6f, Mathf.Clamp01(time / Mathf.Max(0.01f, totalBlinkTime)));
+        float blur = blinking;
+        if (openedAt >= 0f)
+        {
+            float atOpen = startBlur * Mathf.Lerp(1f, 0.6f, Mathf.Clamp01(openedAt / Mathf.Max(0.01f, totalBlinkTime)));
+            blur = atOpen * (1f - Mathf.SmoothStep(0f, 1f, (time - openedAt) / Mathf.Max(0.01f, sharpenTime)));
+        }
 
         Apply(open, blur);
         if (openedAt >= 0f && time - openedAt >= sharpenTime) Finish();
@@ -126,7 +130,12 @@ public class WakeUpIntro : MonoBehaviour
         return 1f;
     }
 
-    private static float Ease(float x) => Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(x));
+    // Smootherstep: starts and stops even more gently than SmoothStep, so the lids glide instead of snap.
+    private static float Ease(float x)
+    {
+        x = Mathf.Clamp01(x);
+        return x * x * x * (x * (x * 6f - 15f) + 10f);
+    }
 
     private void Apply(float open, float blur)
     {

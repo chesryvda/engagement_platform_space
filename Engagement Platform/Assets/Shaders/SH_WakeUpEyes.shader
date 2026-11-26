@@ -83,8 +83,11 @@ Shader "EngagementPlatform/WakeUpEyes"
                 // Lid shape: a soft arc that is highest in the middle. The lower lid moves less than the upper one.
                 float arc = saturate(1.0 - (ang.x * ang.x) / (_OpenWidth * _OpenWidth));
                 float h = _Open * _OpenHeight;
-                float top = h * arc + 0.04 * _Open;
-                float bottom = -h * 0.6 * arc - 0.02 * _Open;
+                // Near fully open both lids slide all the way out of view (also at the sides and the bottom),
+                // so no black is left behind and nothing pops when the effect switches off.
+                float clear = pow(saturate(_Open), 4.0) * 3.0;
+                float top = h * arc + 0.04 * _Open + clear;
+                float bottom = -h * 0.6 * arc - 0.02 * _Open - clear;
                 float soft = _LidSoftness * (1.0 + 2.0 * _Blur);
                 float lid = saturate(smoothstep(top - soft, top + soft, ang.y) + (1.0 - smoothstep(bottom - soft, bottom + soft, ang.y)));
                 lid = max(lid, 1.0 - saturate(_Open * 25.0)); // fully shut: no thin line left
@@ -102,11 +105,13 @@ Shader "EngagementPlatform/WakeUpEyes"
                 {
                     float r = _Blur * _BlurRadius;
                     float aspect = _ScreenParams.y / _ScreenParams.x;
-                    const int N = 16;
+                    // A different rotation per pixel turns the sampling pattern into a soft haze (no rings).
+                    float rnd = frac(sin(dot(uv * _ScreenParams.xy, float2(12.9898, 78.233))) * 43758.5453) * 6.28318;
+                    const int N = 24;
                     half3 sum = 0;
                     [unroll] for (int k = 0; k < N; k++)
                     {
-                        float a = k * 2.39996; // golden angle
+                        float a = k * 2.39996 + rnd; // golden angle
                         float d = sqrt((k + 0.5) / N) * r;
                         float2 o = float2(cos(a) * aspect, sin(a)) * d;
                         sum += SampleSceneColor(uv + o);
