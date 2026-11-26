@@ -2,6 +2,8 @@
 
 Alle geluiden in deze map zijn zelf gegenereerd met audiosynthese (geen opnames van derden). Ze zijn dus **volledig rechtenvrij** en mogen gebruikt worden in de publieke installatie bij Technopolis.
 
+**Uitzondering:** `Scene3_SpaceDebris/A_S3TeddyWindowThump.wav` is een opname van derden (zie *Externe geluiden* onderaan). Die valt onder een licentie met naamsvermelding en **geen commercieel gebruik**.
+
 Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
 
 ## Unity-instellingen (aanbevolen)
@@ -104,6 +106,7 @@ Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
 | `A_S3DebrisWhoosh02.wav` | 0.9s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3DebrisWhoosh03.wav` | 1.2s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3PanelCreakLoop.wav` | 6.0s | mono | ja | Metalen kraakgeluid van een rondtollend paneel. Mono, 3D. Loop. |
+| `A_S3TeddyWindowThump.wav` | 0.5s | stereo (in Unity mono) |  | Doffe bons van de teddybeer tegen de cockpitruit. 3D op de ruit (TeddyWindshieldBump). **Extern, CC BY-NC 4.0**, zie *Externe geluiden*. |
 | `A_S3MusicTenseLoop.wav` | 16.0s | stereo | ja | Gespannen muziek met pulserende bas en tikkend ritme (120 BPM). Loop (16s). |
 
 ### Scene4_Tesla
@@ -150,3 +153,13 @@ Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
   - Sonniss GDC Game Audio Bundle (gratis, royalty-free): https://sonniss.com/gameaudiogdc
   - Freesound (filter op CC0): https://freesound.org
   - Kenney (CC0 sci-fi/UI geluiden): https://kenney.nl/assets/category:Audio
+
+## Externe geluiden (niet zelf gemaakt)
+
+| Bestand | Origineel | Maker | Licentie | Bron |
+|---|---|---|---|---|
+| `Scene3_SpaceDebris/A_S3TeddyWindowThump.wav` | `window_thump.wav` (Freesound #46136) | BristolStories | Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0) | https://freesound.org/people/bristolstories/sounds/46136/ |
+
+- **Naamsvermelding verplicht**, bv. in de credits: "window_thump.wav by BristolStories – https://freesound.org/s/46136/ – License: Attribution NonCommercial 4.0".
+- **Geen commercieel gebruik.** Ga na of de installatie bij Technopolis als commercieel geldt (bv. betalende toegang). Zo ja: vervang dit geluid door een CC0-geluid of vraag de maker om toestemming.
+- Het bestand is ongewijzigd overgenomen; Unity zet het bij import om naar mono voor 3D-geluid.

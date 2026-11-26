@@ -59,6 +59,11 @@ public class TeddyWindshieldBump : MonoBehaviour
     public float pushSideways = 0.7f;
     [Tooltip("Spin right after the bump (degrees per second); it slowly calms down.")]
     public float bumpSpin = 140f;
+
+    [Header("Sound")]
+    [Tooltip("Played on the windscreen when the bear bumps into it (A_S3TeddyWindowThump, CC BY-NC 4.0, BristolStories).")]
+    public AudioClip bumpSound;
+    [Range(0f, 1f)] public float bumpVolume = 0.8f;
     enum Phase { Waiting, Approaching, Bounced }
 
     [Header("Live (read only)")]
@@ -174,6 +179,10 @@ public class TeddyWindshieldBump : MonoBehaviour
                     + ship.up * bounceUp * strength
                     + ship.right * pushSideways;
         velocity = shipVelocity + rel;
+
+        // Thump on the glass, from the spot in front of the player's face (Effects volume).
+        if (bumpSound != null && ExperienceAudio.Instance != null)
+            ExperienceAudio.Instance.Play3D(bumpSound, AudioCategory.Effects, ship, glassPoint, bumpVolume, 1f, 1f, 15f);
 
         spinAxis = Vector3.Cross(n, rel).normalized;
         if (spinAxis.sqrMagnitude < 0.01f) spinAxis = ship.right;

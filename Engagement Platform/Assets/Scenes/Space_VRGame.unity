@@ -264392,6 +264392,8 @@ MonoBehaviour:
   bounceUp: 0.9
   pushSideways: 0.9
   bumpSpin: 140
+  bumpSound: {fileID: 8300000, guid: abe21fd401c694ae89ed415891c33310, type: 3}
+  bumpVolume: 0.8
   phase: 0
 --- !u!1 &2012960261
 GameObject:
