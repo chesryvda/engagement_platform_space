@@ -263316,7 +263316,6 @@ MonoBehaviour:
   bobHeight: 0.15
   approachStartDistance: 14
   driftSpeed: 1.2
-  lineUpRate: 1.2
   glassPoint: {x: 0.1, y: 2.21, z: 1.11}
   glassNormal: {x: 0, y: 0.89, z: 0.45}
   teddyRadius: 0.5
@@ -263324,8 +263323,10 @@ MonoBehaviour:
   bounceUp: 0.9
   pushSideways: 0.9
   bumpSpin: 140
-  bumpSound: {fileID: 8300000, guid: abe21fd401c694ae89ed415891c33310, type: 3}
-  bumpVolume: 0.8
+  bumpSound: {fileID: 8300000, guid: 0d69cae86bcb64b18ad4b8f3cb8f8c7e, type: 3}
+  bumpVolume: 1
+  duckOthers: 1
+  duckTime: 1
   phase: 0
 --- !u!1 &2012960261
 GameObject:
