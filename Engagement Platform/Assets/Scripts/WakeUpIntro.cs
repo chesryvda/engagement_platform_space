@@ -15,28 +15,29 @@ public class WakeUpIntro : MonoBehaviour
     [Tooltip("Material with the shader EngagementPlatform/WakeUpEyes (M_WakeUpEyes)")]
     public Material eyesMaterial;
     public bool playOnStart = true;
+    [Tooltip("Keep the eyes closed (black) until the ride starts: the first pedal stroke (or SPACE), when StartOnFirstPedal switches RouteMover on.")]
+    public bool waitForFirstPedal = true;
+    public RouteMover routeMover;
 
     [Header("Timing (seconds)")]
-    [Tooltip("How long it stays black before the first blink.")]
-    public float startBlack = 0.8f;
-    [Tooltip("The blinks, from slow to fast: how far the eyes open (0-1), how long opening takes, how long they stay open, how long closing takes, how long they stay shut. The last one stays open.")]
+    [Tooltip("How long it stays black after the first pedal stroke, before the first blink.")]
+    public float startBlack = 0.6f;
+    [Tooltip("The blinks, from slow to fast: how far the eyes open (0-1), how blurry the view is during that blink (0-1), how long opening takes, how long they stay open, how long closing takes, how long they stay shut. The last one stays open.")]
     public List<Blink> blinks = new List<Blink>
     {
-        new Blink { open = 0.3f, opening = 0.5f,  hold = 0.3f,  closing = 0.25f, shut = 0.25f },
-        new Blink { open = 0.6f, opening = 0.3f,  hold = 0.15f, closing = 0.15f, shut = 0.12f },
-        new Blink { open = 1f,   opening = 0.55f, hold = 0f,    closing = 0f,    shut = 0f },
+        new Blink { open = 0.3f, blur = 1f,    opening = 0.7f,  hold = 0.45f, closing = 0.35f, shut = 0.35f },
+        new Blink { open = 0.6f, blur = 0.3f,  opening = 0.45f, hold = 0.25f, closing = 0.22f, shut = 0.18f },
+        new Blink { open = 1f,   blur = 0.08f, opening = 0.8f,  hold = 0f,    closing = 0f,    shut = 0f },
     };
-    [Tooltip("How long after the eyes are fully open the view becomes sharp.")]
-    public float sharpenTime = 1.2f;
-
-    [Header("Blur")]
-    [Tooltip("Blur at the start (0-1).")]
-    [Range(0f, 1f)] public float startBlur = 1f;
+    [Tooltip("How long after the eyes are fully open the last bit of blur is gone.")]
+    public float sharpenTime = 0.9f;
 
     [System.Serializable]
     public class Blink
     {
         [Range(0f, 1f)] public float open = 0.5f;
+        [Tooltip("Blur during this blink: like real eyes, the view gets sharper with every blink.")]
+        [Range(0f, 1f)] public float blur = 0.5f;
         public float opening = 0.5f, hold = 0.5f, closing = 0.25f, shut = 0.5f;
     }
 
@@ -46,7 +47,8 @@ public class WakeUpIntro : MonoBehaviour
     [SerializeField] private bool playing;
 
     private Transform sphere;
-    private Material material;
+    private Material material;       // eyelid layer
+    private Material blurMaterial;   // blur layer
     private float time;
     private float totalBlinkTime;
     private UniversalAdditionalCameraData colorCamera;
@@ -59,8 +61,14 @@ public class WakeUpIntro : MonoBehaviour
         Destroy(go.GetComponent<Collider>());
         go.transform.localScale = Vector3.one * 0.2f; // around the eyes, closer than anything in the cockpit
         var r = go.GetComponent<MeshRenderer>();
+        // Two layers on the same sphere: the blur is drawn before the transparent objects (so the cockpit glass
+        // still shows on top of it, with its normal brightness), the eyelids are drawn over everything.
+        blurMaterial = new Material(eyesMaterial);
+        blurMaterial.SetFloat("_Layer", 0f);
+        blurMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent - 1;
         material = new Material(eyesMaterial);
-        r.sharedMaterial = material;
+        material.SetFloat("_Layer", 1f);
+        r.sharedMaterials = new[] { blurMaterial, material };
         r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         r.receiveShadows = false;
         sphere = go.transform;
@@ -78,7 +86,7 @@ public class WakeUpIntro : MonoBehaviour
         time = 0f;
         playing = true;
         sphere.gameObject.SetActive(true);
-        Apply(0f, startBlur);
+        Apply(0f, blinks.Count > 0 ? blinks[0].blur : 0f);
     }
 
     void LateUpdate()
@@ -91,15 +99,23 @@ public class WakeUpIntro : MonoBehaviour
             UseOpaqueImage(cam);
         }
 
+        // Eyes stay shut until the ride starts (first pedal stroke / SPACE switches RouteMover on).
+        if (waitForFirstPedal && routeMover != null && !routeMover.enabled)
+        {
+            time = 0f;
+            Apply(0f, blinks.Count > 0 ? blinks[0].blur : 0f);
+            return;
+        }
+
         time += Time.deltaTime;
         float open = OpenAt(time, out float openedAt);
 
-        // Blur: strong while blinking and slowly less, then fading away once the eyes are fully open.
-        float blinking = startBlur * Mathf.Lerp(1f, 0.6f, Mathf.Clamp01(time / Mathf.Max(0.01f, totalBlinkTime)));
-        float blur = blinking;
+        // Blur: every blink has its own blur (strong, then much less, then almost none), shifting smoothly
+        // while the eyes open; the last bit fades away once the eyes are fully open.
+        float blur = BlurAt(time);
         if (openedAt >= 0f)
         {
-            float atOpen = startBlur * Mathf.Lerp(1f, 0.6f, Mathf.Clamp01(openedAt / Mathf.Max(0.01f, totalBlinkTime)));
+            float atOpen = blinks.Count > 0 ? blinks[blinks.Count - 1].blur : 0f;
             blur = atOpen * (1f - Mathf.SmoothStep(0f, 1f, (time - openedAt) / Mathf.Max(0.01f, sharpenTime)));
         }
 
@@ -130,6 +146,23 @@ public class WakeUpIntro : MonoBehaviour
         return 1f;
     }
 
+    // Blur at time t: the blur of the current blink, moving from the previous blink's blur while the eyes open.
+    private float BlurAt(float t)
+    {
+        if (blinks.Count == 0) return 0f;
+        float previous = blinks[0].blur;
+        float s = startBlack;
+        for (int i = 0; i < blinks.Count; i++)
+        {
+            var b = blinks[i];
+            if (t < s + b.opening) return Mathf.Lerp(previous, b.blur, Ease((t - s) / Mathf.Max(0.01f, b.opening)));
+            s += b.opening + b.hold + b.closing + b.shut;
+            if (t < s || i == blinks.Count - 1) return b.blur;
+            previous = b.blur;
+        }
+        return blinks[blinks.Count - 1].blur;
+    }
+
     // Smootherstep: starts and stops even more gently than SmoothStep, so the lids glide instead of snap.
     private static float Ease(float x)
     {
@@ -141,8 +174,11 @@ public class WakeUpIntro : MonoBehaviour
     {
         openAmount = open;
         blurAmount = blur;
-        material.SetFloat("_Open", open);
-        material.SetFloat("_Blur", blur);
+        foreach (var m in new[] { material, blurMaterial })
+        {
+            m.SetFloat("_Open", open);
+            m.SetFloat("_Blur", blur);
+        }
     }
 
     private void Finish()

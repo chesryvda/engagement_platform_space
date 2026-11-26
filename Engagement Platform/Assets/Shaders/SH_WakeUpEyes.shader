@@ -16,6 +16,9 @@ Shader "EngagementPlatform/WakeUpEyes"
         _OpenHeight ("Opening Height When Open (radians)", Range(0.2, 1.6)) = 1.15
         _OpenWidth ("Eye Width (radians)", Range(0.5, 3)) = 1.6
         _LidSoftness ("Lid Edge Softness", Range(0.005, 0.4)) = 0.06
+        // 0 = blur layer (drawn before the transparent objects, so the cockpit glass still shows on top of it),
+        // 1 = eyelid layer (drawn over everything). WakeUpIntro uses one sphere per layer.
+        [Enum(Blur,0,Lids,1)] _Layer ("Layer", Float) = 1
     }
     SubShader
     {
@@ -45,6 +48,7 @@ Shader "EngagementPlatform/WakeUpEyes"
                 half _OpenHeight;
                 half _OpenWidth;
                 half _LidSoftness;
+                half _Layer;
             CBUFFER_END
 
             struct Attributes
@@ -85,7 +89,7 @@ Shader "EngagementPlatform/WakeUpEyes"
                 float h = _Open * _OpenHeight;
                 // Near fully open both lids slide all the way out of view (also at the sides and the bottom),
                 // so no black is left behind and nothing pops when the effect switches off.
-                float clear = pow(saturate(_Open), 4.0) * 3.0;
+                float clear = smoothstep(0.85, 1.0, _Open) * 3.0;
                 float top = h * arc + 0.04 * _Open + clear;
                 float bottom = -h * 0.6 * arc - 0.02 * _Open - clear;
                 float soft = _LidSoftness * (1.0 + 2.0 * _Blur);
@@ -119,10 +123,13 @@ Shader "EngagementPlatform/WakeUpEyes"
                     col = sum / N;
                 }
 
-                half3 rgb = lerp(col * shade, _LidColor.rgb, lid);
-                half alpha = lerp(max(alphaBlur, 1.0 - shade), 1.0, lid);
-                if (_Blur <= 0.001) rgb = lerp(half3(0, 0, 0), _LidColor.rgb, lid);
-                return half4(rgb, alpha);
+                // Blur layer: only the blurred view (transparent objects like the cockpit glass are drawn after it).
+                if (_Layer < 0.5)
+                    return half4(col, _Blur > 0.001 ? alphaBlur : 0.0);
+
+                // Eyelid layer: black lids, slightly darker towards their edges.
+                half alpha = lerp(1.0 - shade, 1.0, lid);
+                return half4(_LidColor.rgb, alpha);
             }
             ENDHLSL
         }
