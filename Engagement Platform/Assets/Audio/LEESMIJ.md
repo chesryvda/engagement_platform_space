@@ -103,7 +103,8 @@ Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
 | `A_S3DebrisWhoosh01.wav` | 1.0s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3DebrisWhoosh02.wav` | 0.9s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3DebrisWhoosh03.wav` | 1.2s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
-| `A_S3PanelCreakLoop.wav` | 6.0s | mono | ja | Metalen kraakgeluid van een rondtollend paneel. Mono, 3D. Loop. || `A_S3MusicTenseLoop.wav` | 16.0s | stereo | ja | Gespannen muziek met pulserende bas en tikkend ritme (120 BPM). Loop (16s). |
+| `A_S3PanelCreakLoop.wav` | 6.0s | mono | ja | Metalen kraakgeluid van een rondtollend paneel. Mono, 3D. Loop. |
+| `A_S3MusicTenseLoop.wav` | 16.0s | stereo | ja | Gespannen muziek met pulserende bas en tikkend ritme (120 BPM). Loop (16s). |
 
 ### Scene4_Tesla
 
