@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// End of the experience: arriving at the Moon you fall asleep again. Where the white end fade used to start,
 /// the eyes get heavy: they blink a few times (closing longer and opening less far each time, the view
 /// getting blurrier) and then stay shut. On the black, a white Technopolis logo fades in.
-/// - Works in VR: a small sphere around the camera is drawn over everything (both eyes), like WakeUpIntro.
-///   The blur sits under the transparent objects (cockpit glass), the eyelids over everything.
+/// - While blinking, the eyes are drawn by EyesEffectFeature (URP renderer feature) on the finished image,
+///   so everything blurs the same way. Once shut, a black sphere around the camera takes over (both eyes).
 /// - The logo hangs in front of you in the direction you look when the eyes close (not stuck to your head).
 /// - Starts at the same point as EndFade's white fade (its "Fade Length" before the end of the route), so the
 ///   end sounds of RouteAudio (which follow EndFade's distances) stay in place. EndFade itself should be off.
@@ -18,8 +17,6 @@ public class FallAsleepOutro : MonoBehaviour
     public RouteMover routeMover;
     [Tooltip("Only used for its distances (where the white fade used to start). Leave EndFade itself switched off.")]
     public EndFade endFade;
-    [Tooltip("Material with the shader EngagementPlatform/WakeUpEyes (M_WakeUpEyes)")]
-    public Material eyesMaterial;
     [Tooltip("Material with the shader EngagementPlatform/ScreenFade (M_ScreenFade), used to draw the logo on top")]
     public Material logoMaterial;
     [Tooltip("White Technopolis logo with a transparent background")]
@@ -64,25 +61,24 @@ public class FallAsleepOutro : MonoBehaviour
     [SerializeField] private bool started, closed;
 
     private Transform sphere, logoQuad;
-    private Material lidMaterial, blurMaterial, logoMat;
+    private Material blackMaterial, logoMat;
     private float time, closedAt;
     private Vector3 logoForward = Vector3.forward;
-    private UniversalAdditionalCameraData colorCamera;
-    private CameraOverrideOption previousColorOption;
 
     void Start()
     {
+        // While blinking, the eyes are drawn by EyesEffectFeature on the finished image (everything blurs the
+        // same way). Once the eyes are shut, this plain black sphere takes over, so the logo can be drawn on top.
         var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        go.name = "FallAsleepEyes";
+        go.name = "FallAsleepBlack";
         Destroy(go.GetComponent<Collider>());
         go.transform.localScale = Vector3.one * 0.2f;
         var r = go.GetComponent<MeshRenderer>();
-        blurMaterial = new Material(eyesMaterial);
-        blurMaterial.SetFloat("_Layer", 0f);
-        blurMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent - 1;
-        lidMaterial = new Material(eyesMaterial);
-        lidMaterial.SetFloat("_Layer", 1f);
-        r.sharedMaterials = new[] { blurMaterial, lidMaterial };
+        blackMaterial = new Material(logoMaterial);
+        blackMaterial.SetColor("_Color", Color.black);
+        blackMaterial.SetTexture("_MainTex", Texture2D.whiteTexture);
+        blackMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Overlay + 90;
+        r.sharedMaterial = blackMaterial;
         r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         r.receiveShadows = false;
         sphere = go.transform;
@@ -116,14 +112,9 @@ public class FallAsleepOutro : MonoBehaviour
             if (routeMover.RouteLength - routeMover.Distance > startAt) return;
             started = true;
             time = 0f;
-            sphere.gameObject.SetActive(true);
         }
 
-        if (cam != null)
-        {
-            sphere.position = cam.transform.position;
-            if (!closed) UseOpaqueImage(cam);
-        }
+        if (cam != null) sphere.position = cam.transform.position;
 
         time += Time.deltaTime;
         bool shutForGood = closed;
@@ -138,8 +129,8 @@ public class FallAsleepOutro : MonoBehaviour
             closed = true;
             closedAt = time;
             PlaceLogo(cam);
-            RestoreOpaqueImage(); // the view is black now, no more blur needed
-            Apply(0f, 0f);
+            sphere.gameObject.SetActive(true); // plain black from now on, with the logo on top
+            EyesEffect.Active = false;
         }
 
         if (closed && logoQuad != null)
@@ -190,11 +181,9 @@ public class FallAsleepOutro : MonoBehaviour
     {
         openAmount = open;
         blurAmount = blur;
-        foreach (var m in new[] { lidMaterial, blurMaterial })
-        {
-            m.SetFloat("_Open", open);
-            m.SetFloat("_Blur", blur);
-        }
+        EyesEffect.Active = true;
+        EyesEffect.Open = open;
+        EyesEffect.Blur = blur;
     }
 
     // In front of you, in the direction you look at that moment (level), not stuck to your head.
@@ -215,21 +204,8 @@ public class FallAsleepOutro : MonoBehaviour
         logoQuad.gameObject.SetActive(logoAmount > 0.001f);
     }
 
-    private void UseOpaqueImage(Camera cam)
+    void OnDisable()
     {
-        var data = cam.GetUniversalAdditionalCameraData();
-        if (data == colorCamera) return;
-        RestoreOpaqueImage();
-        colorCamera = data;
-        previousColorOption = data.requiresColorOption;
-        data.requiresColorOption = CameraOverrideOption.On;
+        if (started && !closed) EyesEffect.Active = false;
     }
-
-    private void RestoreOpaqueImage()
-    {
-        if (colorCamera != null) colorCamera.requiresColorOption = previousColorOption;
-        colorCamera = null;
-    }
-
-    void OnDisable() => RestoreOpaqueImage();
 }

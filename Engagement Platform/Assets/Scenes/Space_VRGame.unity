@@ -229059,7 +229059,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FallAsleepOutro
   routeMover: {fileID: 1254539343}
   endFade: {fileID: 1254539349}
-  eyesMaterial: {fileID: 2100000, guid: cb7f5e1c234704d1bb62e5cf01d3adbe, type: 2}
   logoMaterial: {fileID: 2100000, guid: c56775b83fbd642aaac556b2501f8da7, type: 2}
   logo: {fileID: 2800000, guid: b84fb7a6ed32a4b85bfe804cf36e413a, type: 3}
   startBeforeEnd: 0
@@ -249207,7 +249206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9453fada78a1e4e4fa5a8a5861aa062a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WakeUpIntro
-  eyesMaterial: {fileID: 2100000, guid: cb7f5e1c234704d1bb62e5cf01d3adbe, type: 2}
   playOnStart: 1
   waitForFirstPedal: 1
   routeMover: {fileID: 1254539343}

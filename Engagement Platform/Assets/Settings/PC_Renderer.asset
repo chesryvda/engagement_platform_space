@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7307540280628120440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8f9482f3712457bad3bb0336ce625f, type: 3}
+  m_Name: EyesEffect
+  m_EditorClassIdentifier: Assembly-CSharp::EyesEffectFeature
+  m_Active: 1
+  shader: {fileID: 4800000, guid: b24dca70e7f1d4a14a2e8fd9fc501158, type: 3}
+  blurRadius: 0.035
+  openHeight: 1.15
+  openWidth: 1.6
+  lidSoftness: 0.06
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,7 +44,8 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 7200000, guid: b9a23f869c4fd45f19c5ada54dd82176, type: 3}
   m_RendererFeatures:
   - {fileID: 7833122117494664109}
-  m_RendererFeatureMap: ad6b866f10d7b46c
+  - {fileID: -7307540280628120440}
+  m_RendererFeatureMap: ad6b866f10d7b46c88744defd466969a
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}

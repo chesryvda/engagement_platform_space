@@ -1,19 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// Start of the experience: you wake up as the astronaut in the cockpit. The view starts black (eyes closed),
 /// the eyes blink open a few times (a bit further each time) and the view is blurry at first. Once the eyes
 /// are fully open the blur fades away and the view is sharp.
-/// - Works in VR: a small sphere around the camera is drawn over everything (both eyes), like EndFade.
-/// - Always follows the camera you are looking through (VR camera or the PC test camera).
-/// - For the blur, the active camera's opaque image is switched on during the intro only, then set back.
+/// - Drawn by EyesEffectFeature (URP renderer feature) on the finished image of the camera you look through,
+///   after all transparent objects: the scene, the cockpit glass and the screen texts blur the same way.
+///   Works in VR (both eyes). Costs nothing once the intro is over.
 /// </summary>
 public class WakeUpIntro : MonoBehaviour
 {
-    [Tooltip("Material with the shader EngagementPlatform/WakeUpEyes (M_WakeUpEyes)")]
-    public Material eyesMaterial;
     public bool playOnStart = true;
     [Tooltip("Keep the eyes closed (black) until the ride starts: the first pedal stroke (or SPACE), when StartOnFirstPedal switches RouteMover on.")]
     public bool waitForFirstPedal = true;
@@ -46,33 +43,11 @@ public class WakeUpIntro : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float blurAmount;
     [SerializeField] private bool playing;
 
-    private Transform sphere;
-    private Material material;       // eyelid layer
-    private Material blurMaterial;   // blur layer
     private float time;
     private float totalBlinkTime;
-    private UniversalAdditionalCameraData colorCamera;
-    private CameraOverrideOption previousColorOption;
 
     void Start()
     {
-        var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        go.name = "WakeUpEyes";
-        Destroy(go.GetComponent<Collider>());
-        go.transform.localScale = Vector3.one * 0.2f; // around the eyes, closer than anything in the cockpit
-        var r = go.GetComponent<MeshRenderer>();
-        // Two layers on the same sphere: the blur is drawn before the transparent objects (so the cockpit glass
-        // still shows on top of it, with its normal brightness), the eyelids are drawn over everything.
-        blurMaterial = new Material(eyesMaterial);
-        blurMaterial.SetFloat("_Layer", 0f);
-        blurMaterial.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent - 1;
-        material = new Material(eyesMaterial);
-        material.SetFloat("_Layer", 1f);
-        r.sharedMaterials = new[] { blurMaterial, material };
-        r.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        r.receiveShadows = false;
-        sphere = go.transform;
-
         totalBlinkTime = startBlack;
         foreach (var b in blinks) totalBlinkTime += b.opening + b.hold + b.closing + b.shut;
 
@@ -85,19 +60,12 @@ public class WakeUpIntro : MonoBehaviour
     {
         time = 0f;
         playing = true;
-        sphere.gameObject.SetActive(true);
         Apply(0f, blinks.Count > 0 ? blinks[0].blur : 0f);
     }
 
     void LateUpdate()
     {
         if (!playing) return;
-        Camera cam = Camera.main;
-        if (cam != null)
-        {
-            sphere.position = cam.transform.position;
-            UseOpaqueImage(cam);
-        }
 
         // Eyes stay shut until the ride starts (first pedal stroke / SPACE switches RouteMover on).
         if (waitForFirstPedal && routeMover != null && !routeMover.enabled)
@@ -170,41 +138,28 @@ public class WakeUpIntro : MonoBehaviour
         return x * x * x * (x * (x * 6f - 15f) + 10f);
     }
 
+    // The eyes are drawn by EyesEffectFeature (URP renderer) on the finished image.
     private void Apply(float open, float blur)
     {
         openAmount = open;
         blurAmount = blur;
-        foreach (var m in new[] { material, blurMaterial })
-        {
-            m.SetFloat("_Open", open);
-            m.SetFloat("_Blur", blur);
-        }
+        EyesEffect.Active = true;
+        EyesEffect.Open = open;
+        EyesEffect.Blur = blur;
     }
 
     private void Finish()
     {
         playing = false;
-        Apply(1f, 0f);
-        if (sphere != null) sphere.gameObject.SetActive(false);
-        RestoreOpaqueImage();
+        openAmount = 1f;
+        blurAmount = 0f;
+        EyesEffect.Active = false;
+        EyesEffect.Open = 1f;
+        EyesEffect.Blur = 0f;
     }
 
-    // The blur reads the camera's opaque image; switch it on for the camera in use, only during the intro.
-    private void UseOpaqueImage(Camera cam)
+    void OnDisable()
     {
-        var data = cam.GetUniversalAdditionalCameraData();
-        if (data == colorCamera) return;
-        RestoreOpaqueImage();
-        colorCamera = data;
-        previousColorOption = data.requiresColorOption;
-        data.requiresColorOption = CameraOverrideOption.On;
+        if (playing) EyesEffect.Active = false;
     }
-
-    private void RestoreOpaqueImage()
-    {
-        if (colorCamera != null) colorCamera.requiresColorOption = previousColorOption;
-        colorCamera = null;
-    }
-
-    void OnDisable() => RestoreOpaqueImage();
 }
