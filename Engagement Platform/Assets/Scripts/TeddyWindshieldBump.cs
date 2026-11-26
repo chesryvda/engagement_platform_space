@@ -39,8 +39,6 @@ public class TeddyWindshieldBump : MonoBehaviour
     public float approachStartDistance = 14f;
     [Tooltip("How fast the bear itself drifts towards the ship (m/s), on top of the ship's own speed.")]
     public float driftSpeed = 1.2f;
-    [Tooltip("How quickly the bear lines up with the windscreen (per second).")]
-    public float lineUpRate = 1.2f;
 
     [Header("Windscreen (in the ship's own space)")]
     [Tooltip("A point on the outside of the windscreen, straight in front of the player's eyes.")]
@@ -63,7 +61,13 @@ public class TeddyWindshieldBump : MonoBehaviour
     [Header("Sound")]
     [Tooltip("Played on the windscreen when the bear bumps into it (A_S3TeddyWindowThump, CC BY-NC 4.0, BristolStories).")]
     public AudioClip bumpSound;
-    [Range(0f, 1f)] public float bumpVolume = 0.8f;
+    [Range(0f, 1f)] public float bumpVolume = 1f;
+    [Tooltip("Briefly lower the music and ambience during the bump (ExperienceAudio's own ducking), so the short thump isn't drowned out by the alarm and the music of the debris zone.")]
+    public bool duckOthers = true;
+    [Tooltip("How long the music and ambience stay lower (seconds).")]
+    public float duckTime = 1f;
+
+    private float unduckAt = -1f;
     enum Phase { Waiting, Approaching, Bounced }
 
     [Header("Live (read only)")]
@@ -78,6 +82,8 @@ public class TeddyWindshieldBump : MonoBehaviour
     private float spinSpeed;
     private Vector3 waitPoint;
     private Vector3 lastShipPos;
+    private Vector3 lockedLocal;   // where the bear is, in the ship's own frame
+    private float approachSpeed;
     private Vector3 shipVelocity;
     private float bobTime;
 
@@ -110,6 +116,13 @@ public class TeddyWindshieldBump : MonoBehaviour
 
     void LateUpdate()
     {
+        // Bring the music and ambience back up after the bump.
+        if (unduckAt >= 0f && Time.time >= unduckAt)
+        {
+            unduckAt = -1f;
+            if (ExperienceAudio.Instance != null) ExperienceAudio.Instance.SetLisaSpeaking(false);
+        }
+
         float dt = Time.deltaTime;
         if (dt <= 0f) return;
 
@@ -124,21 +137,26 @@ public class TeddyWindshieldBump : MonoBehaviour
         {
             case Phase.Waiting:
                 bobTime += dt;
-                center = waitPoint + ship.up * Mathf.Sin(bobTime * 0.8f) * bobHeight;
-                if (InStop() && local.z > 0f && local.z <= approachStartDistance)
+                // The bear always hangs straight ahead of the ship, in front of the player's face, at the distance
+                // that is still left to its waiting spot on the route. So it is already in place from far away and
+                // never slides left or right (the ship's fixed heading vs. the bending route doesn't show).
+                float bob = Mathf.Sin(bobTime * 0.8f) * bobHeight;
+                float ahead = waitDistanceOnRoute - (routeMover != null ? routeMover.Distance : 0f);
+                lockedLocal = new Vector3(lane.x, lane.y + bob, Mathf.Max(ahead, glassPoint.z + teddyRadius + 0.5f));
+                center = ship.TransformPoint(lockedLocal);
+                velocity = shipVelocity;
+                bool close = lockedLocal.z <= approachStartDistance;
+                if (close && (InStop() || lockedLocal.z <= approachStartDistance * 0.5f))
                 {
                     phase = Phase.Approaching;
-                    velocity = Vector3.zero;
                     spinSpeed = 15f;
                 }
                 break;
 
             case Phase.Approaching:
-                // Drift towards the ship and line up with the lane in front of the player's face.
-                Vector3 lineUp = ship.TransformDirection(new Vector3(lane.x - local.x, lane.y - local.y, 0f)) * lineUpRate;
-                Vector3 wanted = -ship.forward * driftSpeed + lineUp;
-                velocity = Vector3.MoveTowards(velocity, wanted, 2f * dt);
-                center += velocity * dt;
+                // Straight at the player's face: in the ship's frame it only comes closer, nothing sideways.
+                approachSpeed = Mathf.MoveTowards(approachSpeed, driftSpeed, 2f * dt);
+                MoveLocked(dt, approachSpeed);
 
                 // Contact with the windscreen: the bear's belly reaches the glass.
                 float gap = Vector3.Dot(center - ship.TransformPoint(glassPoint), n);
@@ -182,12 +200,31 @@ public class TeddyWindshieldBump : MonoBehaviour
 
         // Thump on the glass, from the spot in front of the player's face (Effects volume).
         if (bumpSound != null && ExperienceAudio.Instance != null)
+        {
             ExperienceAudio.Instance.Play3D(bumpSound, AudioCategory.Effects, ship, glassPoint, bumpVolume, 1f, 1f, 15f);
+            if (duckOthers)
+            {
+                ExperienceAudio.Instance.SetLisaSpeaking(true); // music + ambience duck (ExperienceAudio's Lisa ducking)
+                unduckAt = Time.time + duckTime;
+            }
+        }
 
         spinAxis = Vector3.Cross(n, rel).normalized;
         if (spinAxis.sqrMagnitude < 0.01f) spinAxis = ship.right;
         spinSpeed = bumpSpin;
         phase = Phase.Bounced;
+    }
+
+    // Move the bear in the ship's own frame: straight at the player's face along the ship's forward axis,
+    // at the speed the ship moves forward plus its own drift (the last bit of bobbing eases out).
+    private void MoveLocked(float dt, float drift)
+    {
+        float forwardSpeed = Mathf.Max(0f, Vector3.Dot(shipVelocity, ship.forward));
+        lockedLocal.x = lane.x;
+        lockedLocal.y = Mathf.MoveTowards(lockedLocal.y, lane.y, 0.3f * dt);
+        lockedLocal.z -= (forwardSpeed + drift) * dt;
+        center = ship.TransformPoint(lockedLocal);
+        velocity = shipVelocity - ship.forward * (forwardSpeed + drift); // used for the bounce
     }
 
     private bool InStop()

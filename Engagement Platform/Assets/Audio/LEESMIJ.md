@@ -106,7 +106,8 @@ Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
 | `A_S3DebrisWhoosh02.wav` | 0.9s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3DebrisWhoosh03.wav` | 1.2s | mono |  | Brokstuk zweeft vlak langs je hoofd. Mono, 3D op het brokstuk. |
 | `A_S3PanelCreakLoop.wav` | 6.0s | mono | ja | Metalen kraakgeluid van een rondtollend paneel. Mono, 3D. Loop. |
-| `A_S3TeddyWindowThump.wav` | 0.5s | stereo (in Unity mono) |  | Doffe bons van de teddybeer tegen de cockpitruit. 3D op de ruit (TeddyWindshieldBump). **Extern, CC BY-NC 4.0**, zie *Externe geluiden*. |
+| `A_S3TeddyWindowThump.wav` | 0.5s | stereo (in Unity mono) |  | Doffe bons van de teddybeer tegen de cockpitruit (origineel). **Extern, CC BY-NC 4.0**, zie *Externe geluiden*. |
+| `A_S3TeddyWindowThump_Loud.wav` | 0.5s | stereo (in Unity mono) |  | Luidere versie van de bons, deze speelt in de game: 3D op de ruit (TeddyWindshieldBump). **Extern, CC BY-NC 4.0**, zie *Externe geluiden*. |
 | `A_S3MusicTenseLoop.wav` | 16.0s | stereo | ja | Gespannen muziek met pulserende bas en tikkend ritme (120 BPM). Loop (16s). |
 
 ### Scene4_Tesla
@@ -159,7 +160,8 @@ Formaat: WAV, 48 kHz, 16-bit PCM. Unity importeert ze automatisch.
 | Bestand | Origineel | Maker | Licentie | Bron |
 |---|---|---|---|---|
 | `Scene3_SpaceDebris/A_S3TeddyWindowThump.wav` | `window_thump.wav` (Freesound #46136) | BristolStories | Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0) | https://freesound.org/people/bristolstories/sounds/46136/ |
+| `Scene3_SpaceDebris/A_S3TeddyWindowThump_Loud.wav` | bewerkte versie van `window_thump.wav` (luider: compressie en zachte saturatie, ca. +9 dB gemiddeld) | BristolStories (bewerkt) | CC BY-NC 4.0 | idem |
 
 - **Naamsvermelding verplicht**, bv. in de credits: "window_thump.wav by BristolStories – https://freesound.org/s/46136/ – License: Attribution NonCommercial 4.0".
 - **Geen commercieel gebruik.** Ga na of de installatie bij Technopolis als commercieel geldt (bv. betalende toegang). Zo ja: vervang dit geluid door een CC0-geluid of vraag de maker om toestemming.
-- Het bestand is ongewijzigd overgenomen; Unity zet het bij import om naar mono voor 3D-geluid.
+- `A_S3TeddyWindowThump.wav` is ongewijzigd overgenomen. In de game wordt `A_S3TeddyWindowThump_Loud.wav` gebruikt: dezelfde opname, luider gemaakt zodat hij boven het alarm en de muziek uitkomt. Bij bewerkingen vraagt CC BY-NC om te vermelden dat het origineel is aangepast. Unity zet beide bij import om naar mono voor 3D-geluid.
