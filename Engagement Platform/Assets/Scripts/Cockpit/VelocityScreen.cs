@@ -11,8 +11,9 @@ using UnityEngine.UI;
 /// player pedals faster, drops when they stop, and in a slowdown zone it shows the steady crawl speed (FocusStops
 /// holds the ship's speed there).
 /// The arc around the number fills with the real speed on a 0 to maxSpeed scale.
-/// In a slowdown zone an icon fades in under the number (no text, so it works in every language) and the arc
-/// turns to the warning colour.
+/// While the ship brakes and crawls past an object (FocusStops.SlowingOrGliding) an icon fades in under the number
+/// (no text, so it works in every language) and the arc turns to the warning colour. As soon as the ship speeds
+/// up again, both fade back.
 /// A little smoothing keeps the number calm.
 /// </summary>
 public class VelocityScreen : MonoBehaviour
@@ -37,7 +38,7 @@ public class VelocityScreen : MonoBehaviour
     public Color arcSlowdownColor = new Color(1f, 0.67f, 0.24f, 1f);
 
     [Header("Slowdown zone warning")]
-    [Tooltip("Icon shown while the ship is in a slowdown zone (any FocusStops stop).")]
+    [Tooltip("Icon shown while the ship brakes or crawls in a slowdown zone (not while it speeds up again).")]
     public Graphic slowdownIcon;
     public FocusStops focusStops;
     [Tooltip("How long the warning takes to fade in or out, in seconds.")]
@@ -63,22 +64,18 @@ public class VelocityScreen : MonoBehaviour
 
     string lastText;
     float labelLevel;
-    System.Reflection.FieldInfo activeStopField;
 
     void Start()
     {
         float length = routeMover != null && routeMover.route != null ? routeMover.route.CalculateLength() : 0f;
         kmPerMetre = length > 0f ? routeDistanceKm / length : 0f;
-        // FocusStops keeps its active stop private; read it without changing that script.
-        activeStopField = typeof(FocusStops).GetField("activeStop",
-            System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
         SetIconAlpha(0f);
     }
 
     void Update()
     {
-        bool inZone = focusStops != null && activeStopField != null &&
-                      !string.IsNullOrEmpty((string)activeStopField.GetValue(focusStops));
+        // Only while braking or crawling past the object: as soon as the ship speeds up again the warning goes.
+        bool inZone = focusStops != null && focusStops.SlowingOrGliding;
         labelLevel = Mathf.MoveTowards(labelLevel, inZone ? 1f : 0f, Time.deltaTime / labelFade);
         float pulse = labelPulse > 0f ? 0.75f + 0.25f * Mathf.Cos(Time.time * labelPulse * 2f * Mathf.PI) : 1f;
         SetIconAlpha(labelLevel * pulse);
